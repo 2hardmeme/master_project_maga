@@ -59,3 +59,5 @@ D:\Doucments\University\магістерська\master_project\master_project\b
 D:\Doucments\University\магістерська\master_project\master_project\obj\Debug\master_p.020BDB3A.Up2Date
 D:\Doucments\University\магістерська\master_project\master_project\obj\Debug\master_project.Form2.resources
 D:\Doucments\University\магістерська\master_project\master_project\obj\Debug\master_project.Form3.resources
+D:\Doucments\University\магістерська\master_project\master_project\obj\Debug\master_project.Form4.resources
+D:\Doucments\University\магістерська\master_project\master_project\obj\Debug\master_project.Form5.resources

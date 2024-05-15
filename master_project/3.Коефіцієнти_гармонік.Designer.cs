@@ -32,6 +32,12 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.довідкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.щоРобитиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.етапToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.графікФункціїToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.середніЗначенняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.щосьНаступнеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fAQToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.обрахунокАмплітудToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -54,7 +60,7 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(16, 70);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(320, 424);
@@ -64,7 +70,10 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.довідкаToolStripMenuItem});
+            this.довідкаToolStripMenuItem,
+            this.етапToolStripMenuItem,
+            this.fAQToolStripMenuItem,
+            this.обрахунокАмплітудToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1403, 28);
@@ -86,13 +95,58 @@
             this.щоРобитиToolStripMenuItem.Text = "Що робити?";
             this.щоРобитиToolStripMenuItem.Click += new System.EventHandler(this.щоРобитиToolStripMenuItem_Click);
             // 
+            // етапToolStripMenuItem
+            // 
+            this.етапToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.графікФункціїToolStripMenuItem,
+            this.середніЗначенняToolStripMenuItem,
+            this.щосьНаступнеToolStripMenuItem});
+            this.етапToolStripMenuItem.Name = "етапToolStripMenuItem";
+            this.етапToolStripMenuItem.Size = new System.Drawing.Size(54, 24);
+            this.етапToolStripMenuItem.Text = "Етап";
+            // 
+            // графікФункціїToolStripMenuItem
+            // 
+            this.графікФункціїToolStripMenuItem.Name = "графікФункціїToolStripMenuItem";
+            this.графікФункціїToolStripMenuItem.Size = new System.Drawing.Size(236, 26);
+            this.графікФункціїToolStripMenuItem.Text = "0. Графік функції";
+            // 
+            // середніЗначенняToolStripMenuItem
+            // 
+            this.середніЗначенняToolStripMenuItem.Name = "середніЗначенняToolStripMenuItem";
+            this.середніЗначенняToolStripMenuItem.Size = new System.Drawing.Size(236, 26);
+            this.середніЗначенняToolStripMenuItem.Text = "1. Середні значення ";
+            // 
+            // щосьНаступнеToolStripMenuItem
+            // 
+            this.щосьНаступнеToolStripMenuItem.Name = "щосьНаступнеToolStripMenuItem";
+            this.щосьНаступнеToolStripMenuItem.Size = new System.Drawing.Size(236, 26);
+            this.щосьНаступнеToolStripMenuItem.Text = "3. щось наступне";
+            // 
+            // fAQToolStripMenuItem
+            // 
+            this.fAQToolStripMenuItem.Name = "fAQToolStripMenuItem";
+            this.fAQToolStripMenuItem.Size = new System.Drawing.Size(50, 24);
+            this.fAQToolStripMenuItem.Text = "FAQ";
+            // 
+            // обрахунокАмплітудToolStripMenuItem
+            // 
+            this.обрахунокАмплітудToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.обрахунокАмплітудToolStripMenuItem.BackColor = System.Drawing.Color.IndianRed;
+            this.обрахунокАмплітудToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.обрахунокАмплітудToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.обрахунокАмплітудToolStripMenuItem.Name = "обрахунокАмплітудToolStripMenuItem";
+            this.обрахунокАмплітудToolStripMenuItem.Size = new System.Drawing.Size(171, 24);
+            this.обрахунокАмплітудToolStripMenuItem.Text = "Обрахунок амплітуд";
+            this.обрахунокАмплітудToolStripMenuItem.Click += new System.EventHandler(this.обрахунокАмплітудToolStripMenuItem_Click);
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(16, 33);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(319, 29);
             this.panel2.TabIndex = 7;
@@ -186,7 +240,9 @@
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form3";
             this.Text = "Form3";
             this.Load += new System.EventHandler(this.Form3_Load);
@@ -221,5 +277,11 @@
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.ToolStripMenuItem етапToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem графікФункціїToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem середніЗначенняToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem щосьНаступнеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fAQToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem обрахунокАмплітудToolStripMenuItem;
     }
 }

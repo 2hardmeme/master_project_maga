@@ -43,7 +43,7 @@ namespace master_project
             CopyArray(xDots, tDots);
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void обрахунокКоефіцієнтівГармонікToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form3 form3 = new Form3(tDots, AveragesSum, periodDouble);
             form3.Show();
@@ -228,6 +228,6 @@ namespace master_project
             }
 
             CreateNewChart(tDots, AveragesSum);
-        }        
+        }
     }
 }

@@ -205,5 +205,11 @@ namespace master_project
             // Відображення значення xValuesSum у dataGridView4
             dataGridView4.Rows.Add(xValuesSum);
         }
+
+        private void обрахунокАмплітудToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form4 form4 = new Form4(omega, m, periodDouble, columnSums, xValues);
+            form4.Show();
+        }
     }
 }

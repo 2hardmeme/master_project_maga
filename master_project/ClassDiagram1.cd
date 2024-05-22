@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="master_project.Form1">
+    <Position X="3" Y="1.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>XSAAgASSASgAQBAAAgiAABCCAgg4AAAAMVQQByDAIEA=</HashCode>
+      <FileName>1.Введення_даних.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="master_project.Form2">
+    <Position X="4.75" Y="1.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>HQQAAoSAACAACBBAQACAhAICABghMACAAIACAyAACAA=</HashCode>
+      <FileName>2.Середні_значення.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="master_project.Form3">
+    <Position X="6.5" Y="1" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>NUZABAAwACABRBABAAiAgCAGEHgAMAAAAgAAgQCAAAA=</HashCode>
+      <FileName>3.Коефіцієнти_гармонік.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="master_project.Form4">
+    <Position X="8.25" Y="0.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>EQQABgEgACApUBIHCAiAAIACAHh4BAggAnhJQwkAAMA=</HashCode>
+      <FileName>4.Амплітуди.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="master_project.Form5">
+    <Position X="10" Y="2.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>FQAAAAAAACAAUAAAAACAAAACAAgAAAAACAgAQAAAAwA=</HashCode>
+      <FileName>5.Обрахунок_гармонік.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -19,7 +19,7 @@ using Org.BouncyCastle.Pqc.Crypto.Lms;
 
 namespace master_project
 {
-    public partial class Form1 : Form 
+    public partial class Form1 : Form
     {
         // Останні координати натиснутої точки
         private double lastClickedX;
@@ -123,6 +123,13 @@ namespace master_project
                     textBox2.Enabled = true;
                     textBox2.Text = "";
                     button1.Enabled = true;
+
+                    List<double> localMaximaIndices = FindLocalMaxima(yDots);
+                    Console.WriteLine("Індекси локальних максимумів:");
+                    foreach (int index in localMaximaIndices)
+                    {
+                        Console.WriteLine(index);
+                    }
                 }
             }
         }
@@ -330,7 +337,7 @@ namespace master_project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
             // Зчитуємо значення з textBox2
             string input = textBox2.Text;
             // Перевіряємо, чи можна перетворити введене значення в тип double
@@ -349,5 +356,47 @@ namespace master_project
                 MessageBox.Show("Невірне значення для періоду.");
             }
         }
+
+        private List<double> FindLocalMaxima(string[] yDots)
+        {
+            List<double> localMaximaValues = new List<double>();
+
+            // Перевіряємо кожен елемент масиву, крім перших двох і останнього, бо вони не можуть бути локальними максимумами
+            for (int i = 1; i < yDots.Length - 1; i++)
+            {
+                double current = double.Parse(yDots[i]);
+                double previous = double.Parse(yDots[i - 1]);
+                double next = double.Parse(yDots[i + 1]);
+
+                // Якщо поточний елемент більший за обидва сусідні, то це потенційний локальний максимум
+                if (current > previous && current > next)
+                {
+                    // Перевіряємо, чи значення знову піднімається після зниження
+                    bool isRisingAgain = false;
+                    for (int j = i + 1; j < yDots.Length - 1; j++)
+                    {
+                        double afterNext = double.Parse(yDots[j + 1]);
+                        if (afterNext > next)
+                        {
+                            isRisingAgain = true;
+                            break;
+                        }
+                        else if (afterNext < next)
+                        {
+                            break;
+                        }
+                    }
+
+                    // Якщо значення знову піднімається після зниження, то це локальний максимум
+                    if (isRisingAgain)
+                    {
+                        localMaximaValues.Add(current);
+                    }
+                }
+            }
+
+            return localMaximaValues;
+        }
+
     }
 }

@@ -13,7 +13,7 @@ namespace master_project
 {
     public partial class Form3 : Form
     {
-        private string[] tDots;
+        
         private double[] AveragesSum;
         private double periodDouble;
 
@@ -21,6 +21,8 @@ namespace master_project
         private double omega; // Оголошуємо поле omega
         private double m;
         private double[,] harmonicCoefficients;
+        private double a0;
+        private string[] tDots;
 
         //sums
         private double[,] columnSums; // Багатовимірний масив для збереження сум елементів стовпчиків harmonicCoefficients
@@ -58,6 +60,7 @@ namespace master_project
             DisplayHarmonicCoefficients(harmonicCoefficients);
             CalculateColumnSums();
             DisplayColumnSums();
+            CalculateA0(); // Виклик методу для обчислення a0
         }
 
         private void CalculateXValues()
@@ -208,8 +211,24 @@ namespace master_project
 
         private void обрахунокАмплітудToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form4 form4 = new Form4(omega, m, periodDouble, columnSums, xValues);
+            Form4 form4 = new Form4(omega, m, periodDouble, columnSums, xValues, a0, tDots);
             form4.Show();
+        }
+
+        private double CalculateSumOfAverages()
+        {
+            double sum = 0;
+            foreach (double value in AveragesSum)
+            {
+                sum += value; // Обчислення суми елементів AveragesSum
+            }
+            return sum;
+        }
+
+        private void CalculateA0()
+        {
+            double sumOfAverages = CalculateSumOfAverages(); // Обчислення суми AveragesSum
+            a0 = (2 / periodDouble) * sumOfAverages; // Обчислення a0 за новою формулою
         }
     }
 }

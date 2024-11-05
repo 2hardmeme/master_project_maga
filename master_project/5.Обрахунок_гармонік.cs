@@ -31,10 +31,11 @@ namespace master_project
             this.transitXValues = transitXValues;
             this.a0 = a0;
             this.tDots = tDots;
+            double firstA0 = a0 / 2;
 
             CalculateHarmonics(); // Виклик методу для обчислення гармонік
             DisplayHarmonics();
-            CalculateHarmonicSums();
+            CalculateHarmonicSums(firstA0);
         }
 
         private void CalculateHarmonics()
@@ -54,30 +55,30 @@ namespace master_project
             }
         }
 
-        private void CalculateHarmonicSums()
+        private void CalculateHarmonicSums(double firstA0)
         {
-            harmonicSums = new double[transitXValues.Length][];
+            int rowCount = harmonics.Length;                     // Кількість рядків у масиві harmonics
+            int maxElements = harmonics[0].Length;               // Кількість стовпчиків у масиві harmonics
+            harmonicSums = new double[rowCount][];               // Ініціалізуємо багатовимірний масив для зберігання сум гармонік
 
-            // Проходимося по кожному ряду `harmonics`
-            for (int i = 0; i < transitXValues.Length; i++)
+            // Проходимося по кожному рядку масиву harmonics
+            for (int i = 0; i < rowCount; i++)
             {
-                // Ініціалізуємо рядок для `harmonicSums`
-                harmonicSums[i] = new double[newA1coefficients.Length];
+                harmonicSums[i] = new double[maxElements - 1];   // Ініціалізуємо кожний рядок у масиві harmonicSums на один стовпчик менше
+                double cumulativeSum = firstA0;                  // Початкове значення - firstA0
 
-                // Проходимося по кожній гармоніці (тобто по кількості стовпців)
-                for (int j = 0; j <= i && j < newA1coefficients.Length; j++)
+                // Додаємо перші два елементи у суму для першої ітерації
+                if (maxElements > 1)                             // Переконуємося, що є принаймні два елементи
                 {
-                    // Додаємо a0/2 та елементи з відповідних стовпців harmonics
-                    harmonicSums[i][j] = (a0 / 2) + harmonics[i][0]; // Перший стовпчик
-                    if (j > 0)
-                    {
-                        harmonicSums[i][j] += harmonics[i][1]; // Другий стовпчик
-                    }
-                    if (j > 1)
-                    {
-                        harmonicSums[i][j] += harmonics[i][2]; // Третій стовпчик, якщо потрібен
-                    }
-                    // Продовжити для більше стовпців, якщо необхідно
+                    cumulativeSum += harmonics[i][0] + harmonics[i][1];
+                    harmonicSums[i][0] = cumulativeSum;          // Записуємо суму в перший стовпчик harmonicSums
+                }
+
+                // Додаємо наступні елементи, починаючи з третього
+                for (int j = 2; j < maxElements; j++)
+                {
+                    cumulativeSum += harmonics[i][j];            // Додаємо поточний елемент harmonics до суми
+                    harmonicSums[i][j - 1] = cumulativeSum;      // Записуємо суму в поточний стовпчик harmonicSums
                 }
             }
         }

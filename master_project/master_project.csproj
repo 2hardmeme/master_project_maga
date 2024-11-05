@@ -144,6 +144,18 @@
     <Compile Include="4.Амплітуди.Designer.cs">
       <DependentUpon>4.Амплітуди.cs</DependentUpon>
     </Compile>
+    <Compile Include="6.Результати.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.Результати.Designer.cs">
+      <DependentUpon>6.Результати.cs</DependentUpon>
+    </Compile>
+    <Compile Include="2.2.Експериментальне середовище.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="2.2.Експериментальне середовище.Designer.cs">
+      <DependentUpon>2.2.Експериментальне середовище.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="1.Введення_даних.resx">

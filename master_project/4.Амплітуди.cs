@@ -20,6 +20,7 @@ namespace master_project
         private double[] xValues;
         private double a0;
         private string[] tDots;
+        private string[] yDots;
 
         private double[] transitXValues;
         //private double[] omegaThing;
@@ -35,7 +36,7 @@ namespace master_project
         private double[] newB1coefficients;
         private double[] newPercentages;
 
-        public Form4(double omega, double m, double periodDouble, double[,] columnSums, double[] xValues, double a0, string[] tDots)
+        public Form4(double omega, double m, double periodDouble, double[,] columnSums, double[] xValues, double a0, string[] tDots, string[] yDots)
         {
             InitializeComponent();
 
@@ -51,6 +52,7 @@ namespace master_project
             b1coefficients = new double[(int)m];
             this.a0 = a0;
             this.tDots = tDots;
+            this.yDots = yDots;
         }
 
 
@@ -380,7 +382,7 @@ namespace master_project
 
         private void обрахунокГармонікToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form5 form5 = new Form5(newA1coefficients, newB1coefficients, transitXValues, a0, tDots);
+            Form5 form5 = new Form5(newA1coefficients, newB1coefficients, transitXValues, a0, tDots, yDots);
             form5.Show();
         } 
     }

@@ -17,11 +17,12 @@ namespace master_project
         double[] transitXValues;
         private double a0;
         private string[] tDots;
+        private string[] yDots;
 
         private double[][] harmonics; // Масив для зберігання гармонік
         private double[][] harmonicSums; // Масив для зберігання сум гармонік
 
-        public Form5(double[] newA1coefficients, double[] newB1coefficients, double[] transitXValues, double a0, string[] tDots)
+        public Form5(double[] newA1coefficients, double[] newB1coefficients, double[] transitXValues, double a0, string[] tDots, string[] yDots)
         {
             InitializeComponent();
 
@@ -31,6 +32,7 @@ namespace master_project
             this.transitXValues = transitXValues;
             this.a0 = a0;
             this.tDots = tDots;
+            this.yDots = yDots;
             double firstA0 = a0 / 2;
 
             CalculateHarmonics(); // Виклик методу для обчислення гармонік
@@ -109,6 +111,12 @@ namespace master_project
                 // Додаємо рядок до DataGridView
                 dataGridView1.Rows.Add(row);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form6 form6 = new Form6(yDots, harmonicSums);
+            form6.Show();
         }
     }
 }

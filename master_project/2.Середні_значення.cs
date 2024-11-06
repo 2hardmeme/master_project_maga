@@ -45,7 +45,7 @@ namespace master_project
 
         private void обрахунокКоефіцієнтівГармонікToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form3 form3 = new Form3(tDots, AveragesSum, periodDouble);
+            Form3 form3 = new Form3(tDots, AveragesSum, periodDouble, yDots);
             form3.Show();
         }
 

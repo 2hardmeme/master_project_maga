@@ -173,6 +173,9 @@
     <EmbeddedResource Include="5.Обрахунок_гармонік.resx">
       <DependentUpon>5.Обрахунок_гармонік.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="6.Результати.resx">
+      <DependentUpon>6.Результати.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

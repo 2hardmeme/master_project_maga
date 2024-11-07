@@ -62,3 +62,4 @@ D:\Doucments\University\магістерська\master_project\master_project\o
 D:\Doucments\University\магістерська\master_project\master_project\obj\Debug\master_project.Form4.resources
 D:\Doucments\University\магістерська\master_project\master_project\obj\Debug\master_project.Form5.resources
 D:\Doucments\University\магістерська\master_project\master_project\obj\Debug\master_project.Form6.resources
+D:\Doucments\University\магістерська\master_project\master_project\obj\Debug\master_project.Form7.resources

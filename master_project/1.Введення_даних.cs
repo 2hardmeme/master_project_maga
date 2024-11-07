@@ -44,6 +44,8 @@ namespace master_project
             textBox2.Enabled = false;
             textBox2.Text = "Оберіть файл!";
             button1.Enabled = false;
+            button2.Visible = false;
+            button3.Visible = false;
 
             panel3.Visible = false;
             label3.Visible = false;
@@ -123,6 +125,8 @@ namespace master_project
                     textBox2.Enabled = true;
                     textBox2.Text = "";
                     button1.Enabled = true;
+                    button2.Visible = true;
+                    button3.Visible = true;
 
                     List<double> localMaximaIndices = FindLocalMaxima(yDots);
                     Console.WriteLine("Індекси локальних максимумів:");
@@ -337,18 +341,33 @@ namespace master_project
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             // Зчитуємо значення з textBox2
             string input = textBox2.Text;
+
             // Перевіряємо, чи можна перетворити введене значення в тип double
             if (double.TryParse(input, out double periodValue))
             {
-                // Якщо вдалося перетворити, записуємо значення у змінну Period
+                // Якщо вдалося перетворити, записуємо значення у змінну period
                 period = periodValue;
 
-                // Створюємо екземпляр Form2 та передаємо дані
-                Form2 form2 = new Form2(period, yDots, xDots);
-                form2.Show();
+                // Показуємо MessageBox з двома кнопками для вибору
+                var result = MessageBox.Show("Бажаєте продовжити дослідження покроково? Відповідь 'Ні' означає перехід до експериментального дослідження", "Вибір режиму",
+                                             MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+                                             MessageBoxDefaultButton.Button1);
+
+                // Обробляємо вибір користувача
+                if (result == DialogResult.Yes)
+                {
+                    // Якщо натиснули "Yes" (умовно: "Покроково")
+                    Form2 form2 = new Form2(period, yDots, xDots);
+                    form2.Show();
+                }
+                else
+                {
+                    // Якщо натиснули "No" (умовно: "Експеримент")
+                    Form7 form7 = new Form7();
+                    form7.Show();
+                }
             }
             else
             {
@@ -397,6 +416,5 @@ namespace master_project
 
             return localMaximaValues;
         }
-
     }
 }

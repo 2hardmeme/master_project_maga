@@ -161,6 +161,9 @@
     <EmbeddedResource Include="1.Введення_даних.resx">
       <DependentUpon>1.Введення_даних.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="2.2.Експериментальне середовище.resx">
+      <DependentUpon>2.2.Експериментальне середовище.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="2.Середні_значення.resx">
       <DependentUpon>2.Середні_значення.cs</DependentUpon>
     </EmbeddedResource>

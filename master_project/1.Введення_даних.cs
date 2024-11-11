@@ -354,7 +354,6 @@ namespace master_project
                 var result = MessageBox.Show("Бажаєте продовжити дослідження покроково? Відповідь 'Ні' означає перехід до експериментального дослідження", "Вибір режиму",
                                              MessageBoxButtons.YesNo, MessageBoxIcon.Question,
                                              MessageBoxDefaultButton.Button1);
-
                 // Обробляємо вибір користувача
                 if (result == DialogResult.Yes)
                 {
@@ -365,7 +364,7 @@ namespace master_project
                 else
                 {
                     // Якщо натиснули "No" (умовно: "Експеримент")
-                    Form7 form7 = new Form7();
+                    Form7 form7 = new Form7(period, yDots, xDots);
                     form7.Show();
                 }
             }

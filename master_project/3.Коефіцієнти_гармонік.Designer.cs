@@ -58,6 +58,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(16, 70);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
@@ -76,7 +77,7 @@
             this.обрахунокАмплітудToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1403, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1403, 30);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -85,7 +86,7 @@
             this.довідкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.щоРобитиToolStripMenuItem});
             this.довідкаToolStripMenuItem.Name = "довідкаToolStripMenuItem";
-            this.довідкаToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
+            this.довідкаToolStripMenuItem.Size = new System.Drawing.Size(77, 26);
             this.довідкаToolStripMenuItem.Text = "Довідка";
             // 
             // щоРобитиToolStripMenuItem
@@ -102,7 +103,7 @@
             this.середніЗначенняToolStripMenuItem,
             this.щосьНаступнеToolStripMenuItem});
             this.етапToolStripMenuItem.Name = "етапToolStripMenuItem";
-            this.етапToolStripMenuItem.Size = new System.Drawing.Size(54, 24);
+            this.етапToolStripMenuItem.Size = new System.Drawing.Size(54, 26);
             this.етапToolStripMenuItem.Text = "Етап";
             // 
             // графікФункціїToolStripMenuItem
@@ -126,7 +127,7 @@
             // fAQToolStripMenuItem
             // 
             this.fAQToolStripMenuItem.Name = "fAQToolStripMenuItem";
-            this.fAQToolStripMenuItem.Size = new System.Drawing.Size(50, 24);
+            this.fAQToolStripMenuItem.Size = new System.Drawing.Size(50, 26);
             this.fAQToolStripMenuItem.Text = "FAQ";
             // 
             // обрахунокАмплітудToolStripMenuItem
@@ -136,7 +137,7 @@
             this.обрахунокАмплітудToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.обрахунокАмплітудToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.обрахунокАмплітудToolStripMenuItem.Name = "обрахунокАмплітудToolStripMenuItem";
-            this.обрахунокАмплітудToolStripMenuItem.Size = new System.Drawing.Size(171, 24);
+            this.обрахунокАмплітудToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
             this.обрахунокАмплітудToolStripMenuItem.Text = "Обрахунок амплітуд";
             this.обрахунокАмплітудToolStripMenuItem.Click += new System.EventHandler(this.обрахунокАмплітудToolStripMenuItem_Click);
             // 
@@ -164,6 +165,7 @@
             // 
             // dataGridView2
             // 
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(344, 70);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
@@ -196,6 +198,7 @@
             // 
             // dataGridView3
             // 
+            this.dataGridView3.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Location = new System.Drawing.Point(344, 508);
             this.dataGridView3.Margin = new System.Windows.Forms.Padding(4);
@@ -217,6 +220,7 @@
             // 
             // dataGridView4
             // 
+            this.dataGridView4.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.Location = new System.Drawing.Point(4, 4);
             this.dataGridView4.Margin = new System.Windows.Forms.Padding(4);

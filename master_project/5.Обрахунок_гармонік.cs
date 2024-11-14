@@ -113,7 +113,7 @@ namespace master_project
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void результатиToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form6 form6 = new Form6(yDots, harmonicSums);
             form6.Show();

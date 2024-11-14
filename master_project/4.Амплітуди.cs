@@ -235,47 +235,47 @@ namespace master_project
             }
         }
 
-        private void RemoveRowsLessThanValue(int value)
-        {
-            List<int> rowsToDelete = new List<int>();
+        //private void RemoveRowsLessThanValue(int value)
+        //{
+        //    List<int> rowsToDelete = new List<int>();
 
-            // Проходимося по всім рядкам dataGridView4 знизу вгору
-            for (int i = dataGridView4.Rows.Count - 1; i >= 0; i--)
-            {
-                // Отримуємо значення комірки у відповідному рядку dataGridView4
-                int cellValue;
-                if (dataGridView4.Rows[i].Cells[0].Value != null && int.TryParse(dataGridView4.Rows[i].Cells[0].Value.ToString(), out cellValue))
-                {
-                    // Перевіряємо, чи значення менше вибраного користувачем значення
-                    if (cellValue < value)
-                    {
-                        // Зберігаємо індекс рядка для видалення
-                        rowsToDelete.Add(i);
-                    }
-                }
-            }
+        //    // Проходимося по всім рядкам dataGridView4 знизу вгору
+        //    for (int i = dataGridView4.Rows.Count - 1; i >= 0; i--)
+        //    {
+        //        // Отримуємо значення комірки у відповідному рядку dataGridView4
+        //        int cellValue;
+        //        if (dataGridView4.Rows[i].Cells[0].Value != null && int.TryParse(dataGridView4.Rows[i].Cells[0].Value.ToString(), out cellValue))
+        //        {
+        //            // Перевіряємо, чи значення менше вибраного користувачем значення
+        //            if (cellValue < value)
+        //            {
+        //                // Зберігаємо індекс рядка для видалення
+        //                rowsToDelete.Add(i);
+        //            }
+        //        }
+        //    }
 
-            // Видаляємо рядки у зворотньому порядку, щоб уникнути проблем з індексацією
-            for (int i = rowsToDelete.Count - 1; i >= 0; i--)
-            {
-                int rowIndex = rowsToDelete[i];
+        //    // Видаляємо рядки у зворотньому порядку, щоб уникнути проблем з індексацією
+        //    for (int i = rowsToDelete.Count - 1; i >= 0; i--)
+        //    {
+        //        int rowIndex = rowsToDelete[i];
 
-                // Видаляємо відповідні рядки у всіх DataGridView
-                if (rowIndex < dataGridView1.Rows.Count)
-                {
-                    dataGridView1.Rows.RemoveAt(rowIndex);
-                }
-                if (rowIndex < dataGridView2.Rows.Count)
-                {
-                    dataGridView2.Rows.RemoveAt(rowIndex);
-                }
-                if (rowIndex < dataGridView3.Rows.Count)
-                {
-                    dataGridView3.Rows.RemoveAt(rowIndex);
-                }
-                dataGridView4.Rows.RemoveAt(rowIndex);
-            }
-        }
+        //        // Видаляємо відповідні рядки у всіх DataGridView
+        //        if (rowIndex < dataGridView1.Rows.Count)
+        //        {
+        //            dataGridView1.Rows.RemoveAt(rowIndex);
+        //        }
+        //        if (rowIndex < dataGridView2.Rows.Count)
+        //        {
+        //            dataGridView2.Rows.RemoveAt(rowIndex);
+        //        }
+        //        if (rowIndex < dataGridView3.Rows.Count)
+        //        {
+        //            dataGridView3.Rows.RemoveAt(rowIndex);
+        //        }
+        //        dataGridView4.Rows.RemoveAt(rowIndex);
+        //    }
+        //}
 
         //private void InitializeTrackBar()
         //{

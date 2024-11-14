@@ -170,7 +170,6 @@ namespace master_project
             }
         }
 
-
         private void DisplayColumnSums()
         {
             // Очистити dataGridView3 перед додаванням нових даних

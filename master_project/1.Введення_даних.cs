@@ -48,8 +48,10 @@ namespace master_project
             button3.Visible = false;
 
             panel3.Visible = false;
+            panel5.Visible = false;
             label3.Visible = false;
             label4.Visible = false;
+            label6.Visible = false;
             textBoxX.Visible = false;
             textBoxY.Visible = false;
         }
@@ -127,6 +129,9 @@ namespace master_project
                     button1.Enabled = true;
                     button2.Visible = true;
                     button3.Visible = true;
+
+                    panel5.Visible = true;
+                    label6.Visible = true;
 
                     List<double> localMaximaIndices = FindLocalMaxima(yDots);
                     Console.WriteLine("Індекси локальних максимумів:");

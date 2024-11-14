@@ -38,11 +38,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.progressBar4 = new System.Windows.Forms.ProgressBar();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -54,6 +56,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.panel3.SuspendLayout();
@@ -147,6 +150,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.dataGridView4);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.button1);
@@ -154,6 +158,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(223, 479);
             this.panel2.TabIndex = 20;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(113, 399);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(105, 37);
+            this.button4.TabIndex = 24;
+            this.button4.Text = "Зберегти";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // dataGridView4
             // 
@@ -177,12 +191,13 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(3, 399);
+            this.button2.Location = new System.Drawing.Point(4, 399);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(217, 37);
+            this.button2.Size = new System.Drawing.Size(105, 37);
             this.button2.TabIndex = 22;
-            this.button2.Text = "Видалити та зберегти";
+            this.button2.Text = "Видалити";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -192,10 +207,12 @@
             this.button1.TabIndex = 21;
             this.button1.Text = "Відновити";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel3.Controls.Add(this.button5);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.textBox4);
             this.panel3.Controls.Add(this.textBox3);
@@ -209,11 +226,20 @@
             this.panel3.Size = new System.Drawing.Size(407, 274);
             this.panel3.TabIndex = 21;
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(3, 234);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(401, 37);
+            this.button5.TabIndex = 25;
+            this.button5.Text = "Відновити";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(158, 222);
+            this.label9.Location = new System.Drawing.Point(158, 182);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(91, 19);
@@ -222,7 +248,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(10, 244);
+            this.textBox4.Location = new System.Drawing.Point(10, 204);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(387, 22);
             this.textBox4.TabIndex = 25;
@@ -252,9 +278,9 @@
             this.label7.Location = new System.Drawing.Point(6, 54);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(220, 19);
+            this.label7.Size = new System.Drawing.Size(182, 19);
             this.label7.TabIndex = 21;
-            this.label7.Text = "Квадратичне відхилення:";
+            this.label7.Text = "Абсолютна похибка:";
             // 
             // textBox2
             // 
@@ -284,6 +310,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel4.Controls.Add(this.button6);
             this.panel4.Controls.Add(this.button3);
             this.panel4.Controls.Add(this.progressBar3);
             this.panel4.Controls.Add(this.progressBar2);
@@ -300,7 +327,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(3, 153);
+            this.button3.Location = new System.Drawing.Point(3, 156);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(403, 44);
             this.button3.TabIndex = 24;
@@ -316,6 +343,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(640, 35);
             this.panel1.TabIndex = 25;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(1, 156);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(403, 44);
+            this.button6.TabIndex = 25;
+            this.button6.Text = "Продовжити";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // Form7
             // 
@@ -369,5 +406,8 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
     }
 }

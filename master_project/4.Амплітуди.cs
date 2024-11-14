@@ -58,7 +58,7 @@ namespace master_project
 
         private void Form4_Load(object sender, EventArgs e)
         {
-            InitializeTrackBar();
+            //InitializeTrackBar();
             TransitXValues();
 
             //CalculateOmegaThing();
@@ -277,34 +277,34 @@ namespace master_project
             }
         }
 
-        private void InitializeTrackBar()
-        {
-            trackBar1.Minimum = 1;
-            trackBar1.Maximum = 100;
-            trackBar1.Value = 25; // Значення за замовчуванням
-            trackBar1.TickStyle = TickStyle.None; // Відключаємо відображення позначок
-            trackBar1.ValueChanged += trackBar1_ValueChanged; // Додаємо обробник події
-        }
+        //private void InitializeTrackBar()
+        //{
+        //    trackBar1.Minimum = 1;
+        //    trackBar1.Maximum = 100;
+        //    trackBar1.Value = 25; // Значення за замовчуванням
+        //    trackBar1.TickStyle = TickStyle.None; // Відключаємо відображення позначок
+        //    trackBar1.ValueChanged += trackBar1_ValueChanged; // Додаємо обробник події
+        //}
 
-        private void trackBar1_ValueChanged(object sender, EventArgs e)
-        {
-            // Отримуємо нове значення з повзунка
-            int newValue = trackBar1.Value;
+        //private void trackBar1_ValueChanged(object sender, EventArgs e)
+        //{
+        //    // Отримуємо нове значення з повзунка
+        //    int newValue = trackBar1.Value;
 
-            // Відображаємо нове значення в мітці або іншому елементі для відображення
-            label1.Text = "" + newValue;
-        }
+        //    // Відображаємо нове значення в мітці або іншому елементі для відображення
+        //    label1.Text = "" + newValue;
+        //}
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            {
-                // Отримуємо поточне значення на повзунку
-                int currentValue = trackBar1.Value;
+        //private void button2_Click(object sender, EventArgs e)
+        //{
+        //    {
+        //        // Отримуємо поточне значення на повзунку
+        //        int currentValue = trackBar1.Value;
 
-                // Викликаємо метод для видалення рядків з усіх DataGridView
-                RemoveRowsLessThanValue(currentValue);
-            }
-        }
+        //        // Викликаємо метод для видалення рядків з усіх DataGridView
+        //        RemoveRowsLessThanValue(currentValue);
+        //    }
+        //}
 
         private void UpdateArraysFromDataGridViews()
         {

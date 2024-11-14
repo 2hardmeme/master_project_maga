@@ -39,10 +39,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,9 +49,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,11 +57,11 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1});
-            this.dataGridView1.Location = new System.Drawing.Point(548, 42);
+            this.dataGridView1.Location = new System.Drawing.Point(474, 87);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(214, 553);
+            this.dataGridView1.Size = new System.Drawing.Size(225, 507);
             this.dataGridView1.TabIndex = 0;
             // 
             // Column1
@@ -83,11 +76,11 @@
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column3});
-            this.dataGridView2.Location = new System.Drawing.Point(12, 42);
+            this.dataGridView2.Location = new System.Drawing.Point(12, 87);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(262, 553);
+            this.dataGridView2.Size = new System.Drawing.Size(225, 508);
             this.dataGridView2.TabIndex = 1;
             // 
             // Column3
@@ -102,11 +95,11 @@
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column2});
-            this.dataGridView3.Location = new System.Drawing.Point(280, 42);
+            this.dataGridView3.Location = new System.Drawing.Point(243, 87);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersWidth = 51;
             this.dataGridView3.RowTemplate.Height = 24;
-            this.dataGridView3.Size = new System.Drawing.Size(262, 553);
+            this.dataGridView3.Size = new System.Drawing.Size(225, 507);
             this.dataGridView3.TabIndex = 2;
             // 
             // Column2
@@ -121,11 +114,11 @@
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column4});
-            this.dataGridView4.Location = new System.Drawing.Point(768, 42);
+            this.dataGridView4.Location = new System.Drawing.Point(705, 87);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.RowHeadersWidth = 51;
             this.dataGridView4.RowTemplate.Height = 24;
-            this.dataGridView4.Size = new System.Drawing.Size(214, 553);
+            this.dataGridView4.Size = new System.Drawing.Size(225, 507);
             this.dataGridView4.TabIndex = 3;
             // 
             // Column4
@@ -139,10 +132,6 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Location = new System.Drawing.Point(989, 42);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
@@ -151,9 +140,9 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(62, 215);
+            this.button4.Location = new System.Drawing.Point(243, 31);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(114, 50);
+            this.button4.Size = new System.Drawing.Size(225, 50);
             this.button4.TabIndex = 10;
             this.button4.Text = "Відновити";
             this.button4.UseVisualStyleBackColor = true;
@@ -161,60 +150,19 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(46, 271);
+            this.button3.Location = new System.Drawing.Point(474, 31);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(145, 51);
+            this.button3.Size = new System.Drawing.Size(225, 51);
             this.button3.TabIndex = 9;
             this.button3.Text = "Зберегти";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.trackBar1);
-            this.panel2.Location = new System.Drawing.Point(4, 329);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(235, 211);
-            this.panel2.TabIndex = 8;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(94, 55);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "label1";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(40, 153);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(145, 51);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Видалити";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // trackBar1
-            // 
-            this.trackBar1.Location = new System.Drawing.Point(40, 91);
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(145, 56);
-            this.trackBar1.TabIndex = 1;
-            this.trackBar1.ValueChanged += new System.EventHandler(this.trackBar1_ValueChanged);
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(30, 3);
+            this.button1.Location = new System.Drawing.Point(12, 31);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(179, 50);
+            this.button1.Size = new System.Drawing.Size(225, 50);
             this.button1.TabIndex = 0;
             this.button1.Text = "Видалити обрані";
             this.button1.UseVisualStyleBackColor = true;
@@ -268,8 +216,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(1249, 597);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView4);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
@@ -285,10 +236,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -306,10 +253,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TrackBar trackBar1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ToolStripMenuItem обрахунокГармонікToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem етапToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fAQToolStripMenuItem;

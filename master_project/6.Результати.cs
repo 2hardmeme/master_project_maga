@@ -38,6 +38,15 @@ namespace master_project
             CalculateError();
         }
 
+        private void Form6_Load(object sender, EventArgs e)
+        {
+            textBox1.Enabled = false;
+            textBox2.Enabled = false;
+            textBox3.Enabled = false;
+            textBox4.Enabled = false;
+            textBox5.Enabled = false;
+        }
+
         private void FillAllHarmonicsSum()
         {
             // Ініціалізуємо allHarmonicsSum за розміром кількості рядків у harmonicSums
@@ -101,5 +110,7 @@ namespace master_project
             double maxHarmonic = harmonicSignal.Max();
             error = standardDeviation / maxHarmonic;
         }
+
+        
     }
 }

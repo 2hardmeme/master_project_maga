@@ -54,14 +54,20 @@
             this.label6 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -154,7 +160,7 @@
             this.panel2.Controls.Add(this.dataGridView4);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.button1);
-            this.panel2.Location = new System.Drawing.Point(428, 52);
+            this.panel2.Location = new System.Drawing.Point(428, 51);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(223, 479);
             this.panel2.TabIndex = 20;
@@ -223,7 +229,7 @@
             this.panel3.Controls.Add(this.textBox1);
             this.panel3.Location = new System.Drawing.Point(11, 257);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(407, 274);
+            this.panel3.Size = new System.Drawing.Size(409, 274);
             this.panel3.TabIndex = 21;
             // 
             // button5
@@ -325,6 +331,16 @@
             this.panel4.Size = new System.Drawing.Size(409, 200);
             this.panel4.TabIndex = 24;
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(1, 156);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(403, 44);
+            this.button6.TabIndex = 25;
+            this.button6.Text = "Продовжити";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(3, 156);
@@ -344,15 +360,45 @@
             this.panel1.Size = new System.Drawing.Size(640, 35);
             this.panel1.TabIndex = 25;
             // 
-            // button6
+            // dataGridView3
             // 
-            this.button6.Location = new System.Drawing.Point(1, 156);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(403, 44);
-            this.button6.TabIndex = 25;
-            this.button6.Text = "Продовжити";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.dataGridView3.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column2});
+            this.dataGridView3.Location = new System.Drawing.Point(487, 229);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowHeadersWidth = 51;
+            this.dataGridView3.RowTemplate.Height = 24;
+            this.dataGridView3.Size = new System.Drawing.Size(61, 37);
+            this.dataGridView3.TabIndex = 26;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "b1 Coefficients";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 125;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column3});
+            this.dataGridView2.Location = new System.Drawing.Point(511, 219);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(61, 59);
+            this.dataGridView2.TabIndex = 27;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "a1 Coefficients";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 125;
             // 
             // Form7
             // 
@@ -364,6 +410,8 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dataGridView3);
             this.Name = "Form7";
             this.Text = "Form7";
             this.panel2.ResumeLayout(false);
@@ -374,6 +422,8 @@
             this.panel4.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -409,5 +459,9 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
     }
 }

@@ -47,7 +47,6 @@ namespace master_project
             this.xValues = xValues;
 
             this.mysteriousThing = 2 / periodDouble;
-            // Ініціалізуємо масиви для амплітуд у конструкторі
             a1coefficients = new double[(int)m];
             b1coefficients = new double[(int)m];
             this.a0 = a0;

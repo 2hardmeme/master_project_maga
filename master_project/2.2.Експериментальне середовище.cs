@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace master_project
 {
     public partial class Form7 : Form
     {
+        private Stopwatch stopwatch1;
+        private Stopwatch stopwatch2;
         private double period;
         private string[] yDots;
         private string[] xDots;
@@ -38,10 +41,23 @@ namespace master_project
         private double firstA0;
         private double[][] harmonics;
         private double[][] harmonicSums;
+        private double[] harmonicSignal; // Оголошення нового одновимірного масиву
+        private double[] allHarmonicsSum;
+        private double[] squaredDeviations;
+        private double SqrSum; // Declared in the class body
+        private double rootOfSum;
+        private double standardDeviation;
+        private double error;
+
+        private double firstGroupTime;
+        private double secondGroupTime;
+        private double totalElapsedMilliseconds;
 
         public Form7(double period, string[] yDots, string[] xDots)
         {
             InitializeComponent();
+            stopwatch1 = new Stopwatch();
+            stopwatch2 = new Stopwatch();
             this.period = period;
             this.yDots = yDots;
             this.xDots = xDots;
@@ -56,10 +72,17 @@ namespace master_project
             a1coefficients = new double[(int)m];
             b1coefficients = new double[(int)m];
             this.firstA0 = a0 / 2;
+
+            textBox1.Enabled = false;
+            textBox2.Enabled = false;
+            textBox3.Enabled = false;
+            textBox4.Enabled = false;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            stopwatch1.Start();  // Start timing
+
             double[][] Averages = ConvertToAverages(yDots, periodDouble);
             double[] AveragesSum = CalculateRowAverages(Averages);
             progressBar1.Value = progressBar1.Maximum;
@@ -79,6 +102,9 @@ namespace master_project
             DisplayPercentages();
             progressBar3.Value = progressBar3.Maximum;
             button6.Visible = true;
+
+            stopwatch1.Stop();  // Stop timing
+            firstGroupTime = stopwatch1.ElapsedMilliseconds;
         }
 
         private void InitializeTDots()
@@ -381,9 +407,24 @@ namespace master_project
 
         private void button6_Click(object sender, EventArgs e)
         {
-            progressBar4.Value = progressBar4.Maximum;
+            stopwatch2.Start();  // Start timing
+
             CalculateHarmonics();
             CalculateHarmonicSums(firstA0);
+            progressBar4.Value = progressBar4.Maximum;
+
+            FillAllHarmonicsSum();
+            FillHarmonicSignal();
+            CalculateSquaredDeviations();
+            CalculateRootOfSum();
+            CalculateStandardDeviation();
+            CalculateError();
+
+            DisplayErrorAndDeviation();
+            stopwatch2.Stop();  // Stop timing
+            secondGroupTime = stopwatch2.ElapsedMilliseconds;
+            totalElapsedMilliseconds = firstGroupTime + secondGroupTime;
+            textBox3.Text = totalElapsedMilliseconds + " мс";
         }
 
         private void CalculateHarmonics()
@@ -429,6 +470,81 @@ namespace master_project
                     harmonicSums[i][j - 1] = cumulativeSum;      // Записуємо суму в поточний стовпчик harmonicSums
                 }
             }
+        }
+
+        private void FillAllHarmonicsSum()
+        {
+            // Ініціалізуємо allHarmonicsSum за розміром кількості рядків у harmonicSums
+            allHarmonicsSum = new double[harmonicSums.Length];
+
+            // Записуємо значення останнього стовпчика harmonicSums в allHarmonicsSum
+            for (int i = 0; i < harmonicSums.Length; i++)
+            {
+                allHarmonicsSum[i] = harmonicSums[i][harmonicSums[i].Length - 1];
+            }
+        }
+
+        private void FillHarmonicSignal()
+        {
+            int targetLength = yDots.Length;
+            harmonicSignal = new double[targetLength];
+
+            for (int i = 0; i < targetLength; i++)
+            {
+                harmonicSignal[i] = allHarmonicsSum[i % allHarmonicsSum.Length];
+            }
+        }
+
+        private void CalculateSquaredDeviations()
+        {
+            int length = Math.Min(harmonicSignal.Length, yDots.Length);
+            squaredDeviations = new double[length];
+
+            for (int i = 0; i < length; i++)
+            {
+                double yDotValue = double.Parse(yDots[i]); // Convert yDots element to double
+                double deviation = harmonicSignal[i] - yDotValue;
+                squaredDeviations[i] = deviation * deviation;
+            }
+        }
+
+        public void CalculateRootOfSum()
+        {
+            SqrSum = 0;
+
+            // Підсумовуємо всі елементи масиву squaredDeviations
+            for (int i = 0; i < squaredDeviations.Length; i++)
+            {
+                SqrSum += squaredDeviations[i];
+            }
+
+            // Обчислюємо квадратний корінь з суми
+            double rootOfSum = Math.Pow(SqrSum, 0.5); // або Math.Sqrt(SqrSum)
+
+            // Зберігаємо результат у змінній класу, якщо потрібно
+            this.rootOfSum = rootOfSum;
+        }
+
+        public void CalculateStandardDeviation()
+        {
+            standardDeviation = rootOfSum / yDots.Length;
+        }
+
+        public void CalculateError()
+        {
+            double maxHarmonic = harmonicSignal.Max();
+            error = standardDeviation / maxHarmonic;
+        }
+
+        private void DisplayErrorAndDeviation()
+        {
+            // Переведення error у відсотки
+            double errorInPercent = error * 100;
+            textBox1.Text = errorInPercent.ToString("F2") + " %";
+
+            // Переведення standardDeviation у відсотки
+            double standardDeviationInPercent = standardDeviation * 100;
+            textBox2.Text = standardDeviationInPercent.ToString("F2") + " %";
         }
     }
 }

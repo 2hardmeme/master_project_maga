@@ -238,7 +238,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(401, 37);
             this.button5.TabIndex = 25;
-            this.button5.Text = "Відновити";
+            this.button5.Text = "Зберегти результати";
             this.button5.UseVisualStyleBackColor = true;
             // 
             // label9

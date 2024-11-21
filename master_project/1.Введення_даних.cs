@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Xml.Serialization;
 using NPOI.SS.UserModel;
@@ -32,7 +33,12 @@ namespace master_project
         private string[] yDots;
         private string[] xDots;
 
+        private double samplingFrequency = 100; // Частота дискретизації сигналу
+        private double[] DYDots;
 
+
+
+        private List<(int index, double value)> localMaximaValues = new List<(int index, double value)>();
         public Form1()
         {
             InitializeComponent();
@@ -121,6 +127,7 @@ namespace master_project
 
                     //переписуємо точки У в одновимірний масив
                     yDots = ExtractSecondColumn(excelData);
+                    ConvertYDotsToDYDots();
                     xDots = ExtractFirstColumn(excelData);
 
                     // Зробити textBox2 та button1 активними
@@ -133,12 +140,7 @@ namespace master_project
                     panel5.Visible = true;
                     label6.Visible = true;
 
-                    List<double> localMaximaIndices = FindLocalMaxima(yDots);
-                    Console.WriteLine("Індекси локальних максимумів:");
-                    foreach (int index in localMaximaIndices)
-                    {
-                        Console.WriteLine(index);
-                    }
+                    //FindLocalMaxima();
                 }
             }
         }
@@ -344,6 +346,26 @@ namespace master_project
             return xDots;
         }
 
+        private void ConvertYDotsToDYDots()
+        {
+            // Ініціалізація нового масиву для збереження значень у форматі double
+            DYDots = new double[yDots.Length];
+
+            // Перетворення значень з yDots в DYDots
+            for (int i = 0; i < yDots.Length; i++)
+            {
+                if (double.TryParse(yDots[i], out double value))
+                {
+                    DYDots[i] = value;
+                }
+                else
+                {
+                    // Якщо значення не можна перетворити в double, ставимо значення за замовчуванням (наприклад, 0)
+                    DYDots[i] = 0;
+                }
+            }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             // Зчитуємо значення з textBox2
@@ -380,45 +402,132 @@ namespace master_project
             }
         }
 
-        private List<double> FindLocalMaxima(string[] yDots)
+        private void FindLocalMaxima()
         {
-            List<double> localMaximaValues = new List<double>();
+            localMaximaValues.Clear(); // Очищаємо список максимумів
+            double highestValue = double.MinValue; // Для зберігання найвищого максимуму
+            double tolerance = 2.0; // Похибка у 2 одиниці
 
-            // Перевіряємо кожен елемент масиву, крім перших двох і останнього, бо вони не можуть бути локальними максимумами
-            for (int i = 1; i < yDots.Length - 1; i++)
+            // Шукаємо всі локальні максимуми
+            for (int i = 1; i < DYDots.Length - 1; i++)
             {
-                double current = double.Parse(yDots[i]);
-                double previous = double.Parse(yDots[i - 1]);
-                double next = double.Parse(yDots[i + 1]);
-
-                // Якщо поточний елемент більший за обидва сусідні, то це потенційний локальний максимум
-                if (current > previous && current > next)
+                // Умови для локального максимуму:
+                // 1. Поточна точка більша за попередню і наступну
+                if (DYDots[i] > DYDots[i - 1] && DYDots[i] > DYDots[i + 1])
                 {
-                    // Перевіряємо, чи значення знову піднімається після зниження
-                    bool isRisingAgain = false;
-                    for (int j = i + 1; j < yDots.Length - 1; j++)
+                    // Якщо знайдений максимум вищий за поточний "найвищий", оновлюємо
+                    if (DYDots[i] > highestValue)
                     {
-                        double afterNext = double.Parse(yDots[j + 1]);
-                        if (afterNext > next)
-                        {
-                            isRisingAgain = true;
-                            break;
-                        }
-                        else if (afterNext < next)
-                        {
-                            break;
-                        }
+                        highestValue = DYDots[i];  // Оновлюємо найвищий максимум
+                        localMaximaValues.Clear(); // Очищаємо список перед додаванням нових максимумів
+                        localMaximaValues.Add((i, DYDots[i])); // Додаємо індекс та значення нового максимуму
                     }
-
-                    // Якщо значення знову піднімається після зниження, то це локальний максимум
-                    if (isRisingAgain)
+                    // Якщо знайдений максимум знаходиться в межах похибки від найвищого, додаємо його до списку
+                    else if (DYDots[i] >= highestValue - tolerance)
                     {
-                        localMaximaValues.Add(current);
+                        localMaximaValues.Add((i, DYDots[i])); // Додаємо індекс та значення максимуму
                     }
                 }
             }
+        }
 
-            return localMaximaValues;
+
+
+        private void HighlightMaximaOnChart()
+        {
+            // Очищаємо попередні виділення
+            var maximaSeries = chart1.Series.FindByName("Maxima");
+            if (maximaSeries == null)
+            {
+                // Додаємо серію для максимумів, якщо вона ще не створена
+                maximaSeries = chart1.Series.Add("Maxima");
+                maximaSeries.ChartType = SeriesChartType.Point;
+                maximaSeries.Color = Color.Yellow; // Змінено колір на жовтий
+                maximaSeries.MarkerSize = 8;
+                maximaSeries.MarkerStyle = MarkerStyle.Circle;
+            }
+            maximaSeries.Points.Clear();
+
+            // Додаємо точки максимумів
+            foreach (var (index, value) in localMaximaValues)
+            {
+                double x = double.Parse(xDots[index]); // Перетворення X-координат
+                maximaSeries.Points.AddXY(x, value);
+            }
+        }
+
+        //public class FFTAnalyzer
+        //{
+        //    public static double FindPeriod(double[] signal, double samplingFrequency)
+        //    {
+        //        int N = signal.Length;
+
+        //        // Виконання FFT
+        //        System.Numerics.Complex[] fft = new System.Numerics.Complex[N];
+
+        //        // Пошук спектральної потужності
+        //        double[] powerSpectrum = new double[N / 2];
+        //        for (int k = 1; k < N / 2; k++) // Починаємо з 1, пропускаємо нульову частоту
+        //        {
+        //            powerSpectrum[k] = Math.Pow(fftResult[k].Real, 2) + Math.Pow(fftResult[k].Imaginary, 2);
+        //        }
+
+        //        // Знаходимо індекс з максимальною потужністю
+        //        int maxIndex = 1;
+        //        for (int k = 2; k < N / 2; k++)
+        //        {
+        //            if (powerSpectrum[k] > powerSpectrum[maxIndex])
+        //                maxIndex = k;
+        //        }
+
+        //        // Обчислюємо частоту та період
+        //        double dominantFrequency = maxIndex * samplingFrequency / N;
+        //        return 1 / dominantFrequency; // Період
+        //    }
+
+        //    // Метод FFT (реалізація доступна в бібліотеках, наприклад MathNet.Numerics)
+        //    public static Complex[] FFT(double[] signal)
+        //    {
+        //        int N = signal.Length;
+        //        Complex[] fft = new Complex[N];
+        //        for (int i = 0; i < N; i++)
+        //        {
+        //            fft[i] = new Complex(signal[i], 0);
+        //        }
+
+        //        FourierTransform.FFT(fft, FourierTransform.Direction.Forward);
+        //        return fft;
+        //    }
+        //}
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FindLocalMaxima();
+            HighlightMaximaOnChart();
+        }
+
+        private void CalculatePeriod()
+        {
+            // Перевірка, чи масив DYDots ініціалізований
+            if (DYDots == null || DYDots.Length == 0)
+            {
+                MessageBox.Show("Масив DYDots порожній або не ініціалізований!", "Помилка");
+                return;
+            }
+
+            // Виклик методу для знаходження періоду
+            double period = PeriodMethods.FindPeriod(DYDots, samplingFrequency);
+
+            // Виведення результату в TextBox
+            textBox2.Text = period.ToString("F2");
+
+            // Виведення результату
+            MessageBox.Show($"Період сигналу за мете: {period:F2} секунд", "Результат");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            CalculatePeriod();
         }
     }
 }

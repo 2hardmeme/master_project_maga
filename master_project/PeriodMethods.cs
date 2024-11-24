@@ -10,7 +10,7 @@ namespace master_project
 {
     public class PeriodMethods
     {
-        public static double FindPeriod(double[] signal, double samplingFrequency)
+        public static (double periodInSeconds, double periodInPoints) FindPeriod(double[] signal, double samplingFrequency)
         {
             // Перевірка вхідного сигналу
             if (signal == null || signal.Length == 0)
@@ -31,10 +31,18 @@ namespace master_project
 
             // Знаходження частоти з найвищою амплітудою
             int peakIndex = Array.IndexOf(magnitudes, magnitudes.Max());
+
+            // Домінантна частота в герцах
             double dominantFrequency = (double)peakIndex * samplingFrequency / signal.Length;
 
-            // Період = 1 / частота
-            return 1 / dominantFrequency;
+            // Період у секундах
+            double periodInSeconds = 1 / dominantFrequency;
+
+            // Період у кількості точок
+            double periodInPoints = (double)signal.Length / peakIndex;
+
+            return (periodInSeconds, periodInPoints);
         }
     }
+
 }

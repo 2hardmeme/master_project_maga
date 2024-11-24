@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -44,8 +44,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.довідкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.етапToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fAQToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -55,16 +53,16 @@
             // 
             // chart1
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chart1.Legends.Add(legend4);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(12, 60);
             this.chart1.Name = "chart1";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chart1.Series.Add(series4);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(755, 549);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -173,9 +171,7 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.довідкаToolStripMenuItem,
-            this.етапToolStripMenuItem,
-            this.fAQToolStripMenuItem});
+            this.довідкаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
@@ -188,18 +184,6 @@
             this.довідкаToolStripMenuItem.Name = "довідкаToolStripMenuItem";
             this.довідкаToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
             this.довідкаToolStripMenuItem.Text = "Довідка";
-            // 
-            // етапToolStripMenuItem
-            // 
-            this.етапToolStripMenuItem.Name = "етапToolStripMenuItem";
-            this.етапToolStripMenuItem.Size = new System.Drawing.Size(54, 24);
-            this.етапToolStripMenuItem.Text = "Етап";
-            // 
-            // fAQToolStripMenuItem
-            // 
-            this.fAQToolStripMenuItem.Name = "fAQToolStripMenuItem";
-            this.fAQToolStripMenuItem.Size = new System.Drawing.Size(50, 24);
-            this.fAQToolStripMenuItem.Text = "FAQ";
             // 
             // label4
             // 
@@ -255,8 +239,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem довідкаToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem етапToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem fAQToolStripMenuItem;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox4;

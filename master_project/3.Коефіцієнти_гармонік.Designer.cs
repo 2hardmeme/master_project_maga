@@ -32,11 +32,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.довідкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.щоРобитиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.етапToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.графікФункціїToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.середніЗначенняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.щосьНаступнеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fAQToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.обрахунокАмплітудToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -72,12 +67,10 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.довідкаToolStripMenuItem,
-            this.етапToolStripMenuItem,
-            this.fAQToolStripMenuItem,
             this.обрахунокАмплітудToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1403, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1403, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -86,7 +79,7 @@
             this.довідкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.щоРобитиToolStripMenuItem});
             this.довідкаToolStripMenuItem.Name = "довідкаToolStripMenuItem";
-            this.довідкаToolStripMenuItem.Size = new System.Drawing.Size(77, 26);
+            this.довідкаToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
             this.довідкаToolStripMenuItem.Text = "Довідка";
             // 
             // щоРобитиToolStripMenuItem
@@ -96,40 +89,6 @@
             this.щоРобитиToolStripMenuItem.Text = "Що робити?";
             this.щоРобитиToolStripMenuItem.Click += new System.EventHandler(this.щоРобитиToolStripMenuItem_Click);
             // 
-            // етапToolStripMenuItem
-            // 
-            this.етапToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.графікФункціїToolStripMenuItem,
-            this.середніЗначенняToolStripMenuItem,
-            this.щосьНаступнеToolStripMenuItem});
-            this.етапToolStripMenuItem.Name = "етапToolStripMenuItem";
-            this.етапToolStripMenuItem.Size = new System.Drawing.Size(54, 26);
-            this.етапToolStripMenuItem.Text = "Етап";
-            // 
-            // графікФункціїToolStripMenuItem
-            // 
-            this.графікФункціїToolStripMenuItem.Name = "графікФункціїToolStripMenuItem";
-            this.графікФункціїToolStripMenuItem.Size = new System.Drawing.Size(236, 26);
-            this.графікФункціїToolStripMenuItem.Text = "0. Графік функції";
-            // 
-            // середніЗначенняToolStripMenuItem
-            // 
-            this.середніЗначенняToolStripMenuItem.Name = "середніЗначенняToolStripMenuItem";
-            this.середніЗначенняToolStripMenuItem.Size = new System.Drawing.Size(236, 26);
-            this.середніЗначенняToolStripMenuItem.Text = "1. Середні значення ";
-            // 
-            // щосьНаступнеToolStripMenuItem
-            // 
-            this.щосьНаступнеToolStripMenuItem.Name = "щосьНаступнеToolStripMenuItem";
-            this.щосьНаступнеToolStripMenuItem.Size = new System.Drawing.Size(236, 26);
-            this.щосьНаступнеToolStripMenuItem.Text = "3. щось наступне";
-            // 
-            // fAQToolStripMenuItem
-            // 
-            this.fAQToolStripMenuItem.Name = "fAQToolStripMenuItem";
-            this.fAQToolStripMenuItem.Size = new System.Drawing.Size(50, 26);
-            this.fAQToolStripMenuItem.Text = "FAQ";
-            // 
             // обрахунокАмплітудToolStripMenuItem
             // 
             this.обрахунокАмплітудToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -137,7 +96,7 @@
             this.обрахунокАмплітудToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.обрахунокАмплітудToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.обрахунокАмплітудToolStripMenuItem.Name = "обрахунокАмплітудToolStripMenuItem";
-            this.обрахунокАмплітудToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
+            this.обрахунокАмплітудToolStripMenuItem.Size = new System.Drawing.Size(171, 24);
             this.обрахунокАмплітудToolStripMenuItem.Text = "Обрахунок амплітуд";
             this.обрахунокАмплітудToolStripMenuItem.Click += new System.EventHandler(this.обрахунокАмплітудToolStripMenuItem_Click);
             // 
@@ -281,11 +240,6 @@
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView dataGridView4;
-        private System.Windows.Forms.ToolStripMenuItem етапToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem графікФункціїToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem середніЗначенняToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem щосьНаступнеToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem fAQToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem обрахунокАмплітудToolStripMenuItem;
     }
 }

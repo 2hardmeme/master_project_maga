@@ -36,11 +36,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.довідкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.щоРобитиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.етапиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.повернутисьДоГрафікуФіїToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.коефіцієнтиГармToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.амплітудиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fAQToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.обрахунокКоефіцієнтівГармонікToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -79,8 +74,6 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.довідкаToolStripMenuItem,
-            this.етапиToolStripMenuItem,
-            this.fAQToolStripMenuItem,
             this.обрахунокКоефіцієнтівГармонікToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -102,40 +95,6 @@
             this.щоРобитиToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
             this.щоРобитиToolStripMenuItem.Text = "Що робити?";
             this.щоРобитиToolStripMenuItem.Click += new System.EventHandler(this.щоРобитиToolStripMenuItem_Click);
-            // 
-            // етапиToolStripMenuItem
-            // 
-            this.етапиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.повернутисьДоГрафікуФіїToolStripMenuItem,
-            this.коефіцієнтиГармToolStripMenuItem,
-            this.амплітудиToolStripMenuItem});
-            this.етапиToolStripMenuItem.Name = "етапиToolStripMenuItem";
-            this.етапиToolStripMenuItem.Size = new System.Drawing.Size(54, 24);
-            this.етапиToolStripMenuItem.Text = "Етап";
-            // 
-            // повернутисьДоГрафікуФіїToolStripMenuItem
-            // 
-            this.повернутисьДоГрафікуФіїToolStripMenuItem.Name = "повернутисьДоГрафікуФіїToolStripMenuItem";
-            this.повернутисьДоГрафікуФіїToolStripMenuItem.Size = new System.Drawing.Size(258, 26);
-            this.повернутисьДоГрафікуФіїToolStripMenuItem.Text = "0. Графік функції";
-            // 
-            // коефіцієнтиГармToolStripMenuItem
-            // 
-            this.коефіцієнтиГармToolStripMenuItem.Name = "коефіцієнтиГармToolStripMenuItem";
-            this.коефіцієнтиГармToolStripMenuItem.Size = new System.Drawing.Size(258, 26);
-            this.коефіцієнтиГармToolStripMenuItem.Text = "2. Коефіцієнти гармонік";
-            // 
-            // амплітудиToolStripMenuItem
-            // 
-            this.амплітудиToolStripMenuItem.Name = "амплітудиToolStripMenuItem";
-            this.амплітудиToolStripMenuItem.Size = new System.Drawing.Size(258, 26);
-            this.амплітудиToolStripMenuItem.Text = "3. Амплітуди";
-            // 
-            // fAQToolStripMenuItem
-            // 
-            this.fAQToolStripMenuItem.Name = "fAQToolStripMenuItem";
-            this.fAQToolStripMenuItem.Size = new System.Drawing.Size(50, 24);
-            this.fAQToolStripMenuItem.Text = "FAQ";
             // 
             // обрахунокКоефіцієнтівГармонікToolStripMenuItem
             // 
@@ -254,11 +213,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.ToolStripMenuItem етапиToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem повернутисьДоГрафікуФіїToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem коефіцієнтиГармToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem амплітудиToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem fAQToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem обрахунокКоефіцієнтівГармонікToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;

@@ -5,6 +5,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{15F58BD7-64E8-40B8-9FD2-B6EAE381A900}|master_project\\master_project.csproj|d:\\doucments\\university\\\u043C\u0430\u0433\u0456\u0441\u0442\u0435\u0440\u0441\u044C\u043A\u0430\\master_project\\master_project\\1.\u0432\u0432\u0435\u0434\u0435\u043D\u043D\u044F_\u0434\u0430\u043D\u0438\u0445.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{15F58BD7-64E8-40B8-9FD2-B6EAE381A900}|master_project\\master_project.csproj|solutionrelative:master_project\\1.\u0432\u0432\u0435\u0434\u0435\u043D\u043D\u044F_\u0434\u0430\u043D\u0438\u0445.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15F58BD7-64E8-40B8-9FD2-B6EAE381A900}|master_project\\master_project.csproj|d:\\doucments\\university\\\u043C\u0430\u0433\u0456\u0441\u0442\u0435\u0440\u0441\u044C\u043A\u0430\\master_project\\master_project\\functiongeneration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15F58BD7-64E8-40B8-9FD2-B6EAE381A900}|master_project\\master_project.csproj|solutionrelative:master_project\\functiongeneration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15F58BD7-64E8-40B8-9FD2-B6EAE381A900}|master_project\\master_project.csproj|d:\\doucments\\university\\\u043C\u0430\u0433\u0456\u0441\u0442\u0435\u0440\u0441\u044C\u043A\u0430\\master_project\\master_project\\1.\u0432\u0432\u0435\u0434\u0435\u043D\u043D\u044F_\u0434\u0430\u043D\u0438\u0445.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{15F58BD7-64E8-40B8-9FD2-B6EAE381A900}|master_project\\master_project.csproj|solutionrelative:master_project\\1.\u0432\u0432\u0435\u0434\u0435\u043D\u043D\u044F_\u0434\u0430\u043D\u0438\u0445.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +22,20 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "1.\u0412\u0432\u0435\u0434\u0435\u043D\u043D\u044F_\u0434\u0430\u043D\u0438\u0445.cs [Design]",
+              "DocumentMoniker": "D:\\Doucments\\University\\\u043C\u0430\u0433\u0456\u0441\u0442\u0435\u0440\u0441\u044C\u043A\u0430\\master_project\\master_project\\1.\u0412\u0432\u0435\u0434\u0435\u043D\u043D\u044F_\u0434\u0430\u043D\u0438\u0445.cs",
+              "RelativeDocumentMoniker": "master_project\\1.\u0412\u0432\u0435\u0434\u0435\u043D\u043D\u044F_\u0434\u0430\u043D\u0438\u0445.cs",
+              "ToolTip": "D:\\Doucments\\University\\\u043C\u0430\u0433\u0456\u0441\u0442\u0435\u0440\u0441\u044C\u043A\u0430\\master_project\\master_project\\1.\u0412\u0432\u0435\u0434\u0435\u043D\u043D\u044F_\u0434\u0430\u043D\u0438\u0445.cs [Design]",
+              "RelativeToolTip": "master_project\\1.\u0412\u0432\u0435\u0434\u0435\u043D\u043D\u044F_\u0434\u0430\u043D\u0438\u0445.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-24T17:56:37.86Z",
+              "EditorCaption": " [Design]"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,9 +44,22 @@
               "RelativeDocumentMoniker": "master_project\\1.\u0412\u0432\u0435\u0434\u0435\u043D\u043D\u044F_\u0434\u0430\u043D\u0438\u0445.cs",
               "ToolTip": "D:\\Doucments\\University\\\u043C\u0430\u0433\u0456\u0441\u0442\u0435\u0440\u0441\u044C\u043A\u0430\\master_project\\master_project\\1.\u0412\u0432\u0435\u0434\u0435\u043D\u043D\u044F_\u0434\u0430\u043D\u0438\u0445.cs",
               "RelativeToolTip": "master_project\\1.\u0412\u0432\u0435\u0434\u0435\u043D\u043D\u044F_\u0434\u0430\u043D\u0438\u0445.cs",
-              "ViewState": "AQIAAFkBAAAAAAAAAAAAAKwBAAAXAAAA",
+              "ViewState": "AQIAAA8CAAAAAAAAAAAQwCoCAABWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-24T17:33:14.042Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FunctionGeneration.cs",
+              "DocumentMoniker": "D:\\Doucments\\University\\\u043C\u0430\u0433\u0456\u0441\u0442\u0435\u0440\u0441\u044C\u043A\u0430\\master_project\\master_project\\FunctionGeneration.cs",
+              "RelativeDocumentMoniker": "master_project\\FunctionGeneration.cs",
+              "ToolTip": "D:\\Doucments\\University\\\u043C\u0430\u0433\u0456\u0441\u0442\u0435\u0440\u0441\u044C\u043A\u0430\\master_project\\master_project\\FunctionGeneration.cs",
+              "RelativeToolTip": "master_project\\FunctionGeneration.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAADwv2cAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-24T17:41:53.346Z",
               "EditorCaption": ""
             }
           ]

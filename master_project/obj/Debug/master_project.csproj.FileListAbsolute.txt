@@ -63,3 +63,11 @@ D:\Doucments\University\магістерська\master_project\master_project\o
 D:\Doucments\University\магістерська\master_project\master_project\obj\Debug\master_project.Form5.resources
 D:\Doucments\University\магістерська\master_project\master_project\obj\Debug\master_project.Form6.resources
 D:\Doucments\University\магістерська\master_project\master_project\obj\Debug\master_project.Form7.resources
+D:\Doucments\University\магістерська\master_project\master_project\bin\Debug\EPPlus.dll
+D:\Doucments\University\магістерська\master_project\master_project\bin\Debug\EPPlus.Interfaces.dll
+D:\Doucments\University\магістерська\master_project\master_project\bin\Debug\EPPlus.System.Drawing.dll
+D:\Doucments\University\магістерська\master_project\master_project\bin\Debug\System.ComponentModel.Annotations.dll
+D:\Doucments\University\магістерська\master_project\master_project\bin\Debug\System.Drawing.Common.dll
+D:\Doucments\University\магістерська\master_project\master_project\bin\Debug\EPPlus.xml
+D:\Doucments\University\магістерська\master_project\master_project\bin\Debug\System.Drawing.Common.pdb
+D:\Doucments\University\магістерська\master_project\master_project\bin\Debug\System.Drawing.Common.xml

@@ -529,5 +529,30 @@ namespace master_project
         {
             CalculatePeriod();
         }
+
+        private void testToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Параметри генерації
+            int points = 100;
+            double basePeriod = 2 * Math.PI;
+            double amplitude = 1.0;
+            double frequency = 1.0;
+            double distortionLevel = 0.2; // Рівень спотворення
+
+            // Генерація функцій
+            var distortedSquareWave = FunctionGeneration.GenerateDistortedSquareWave(points, basePeriod, amplitude, distortionLevel);
+            var distortedSawtoothWave = FunctionGeneration.GenerateDistortedSawtoothWave(points, basePeriod, amplitude, distortionLevel);
+            var distortedSineWave = FunctionGeneration.GenerateDistortedSineWave(points, basePeriod, amplitude, frequency, distortionLevel);
+
+            // Шлях до робочого столу
+            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string directoryPath = Path.Combine(desktopPath, "DistortedFunctions");
+            Directory.CreateDirectory(directoryPath);
+
+            // Збереження функцій
+            FunctionGeneration.SaveFunctionsToExcel(distortedSquareWave, distortedSawtoothWave, distortedSineWave, directoryPath);
+
+            MessageBox.Show($"Спотворені функції збережено у папці: {directoryPath}");
+        }
     }
 }

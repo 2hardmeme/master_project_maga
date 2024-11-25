@@ -28,11 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.згенеруватиФункціюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.меандрToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.пилкоподібнаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.гармонічнаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.відкритиExcelФайлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.відкритиCSVФайлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.довідкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,10 +63,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.згенеруватиФункціюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.меандрToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.пилкоподібнаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.гармонічнаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -97,17 +98,46 @@
             this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
             this.файлToolStripMenuItem.Text = "Файл";
             // 
+            // згенеруватиФункціюToolStripMenuItem
+            // 
+            this.згенеруватиФункціюToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.testToolStripMenuItem,
+            this.меандрToolStripMenuItem,
+            this.пилкоподібнаToolStripMenuItem,
+            this.гармонічнаToolStripMenuItem});
+            this.згенеруватиФункціюToolStripMenuItem.Name = "згенеруватиФункціюToolStripMenuItem";
+            this.згенеруватиФункціюToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
+            this.згенеруватиФункціюToolStripMenuItem.Text = "Згенерувати функцію";
+            // 
+            // меандрToolStripMenuItem
+            // 
+            this.меандрToolStripMenuItem.Name = "меандрToolStripMenuItem";
+            this.меандрToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.меандрToolStripMenuItem.Text = "Меандр";
+            // 
+            // пилкоподібнаToolStripMenuItem
+            // 
+            this.пилкоподібнаToolStripMenuItem.Name = "пилкоподібнаToolStripMenuItem";
+            this.пилкоподібнаToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.пилкоподібнаToolStripMenuItem.Text = "Пилкоподібна";
+            // 
+            // гармонічнаToolStripMenuItem
+            // 
+            this.гармонічнаToolStripMenuItem.Name = "гармонічнаToolStripMenuItem";
+            this.гармонічнаToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.гармонічнаToolStripMenuItem.Text = "Гармонічна";
+            // 
             // відкритиExcelФайлToolStripMenuItem
             // 
             this.відкритиExcelФайлToolStripMenuItem.Name = "відкритиExcelФайлToolStripMenuItem";
-            this.відкритиExcelФайлToolStripMenuItem.Size = new System.Drawing.Size(230, 26);
+            this.відкритиExcelФайлToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
             this.відкритиExcelФайлToolStripMenuItem.Text = "Відкрити Excel файл";
             this.відкритиExcelФайлToolStripMenuItem.Click += new System.EventHandler(this.відкритиExcelФайлToolStripMenuItem_Click);
             // 
             // відкритиCSVФайлToolStripMenuItem
             // 
             this.відкритиCSVФайлToolStripMenuItem.Name = "відкритиCSVФайлToolStripMenuItem";
-            this.відкритиCSVФайлToolStripMenuItem.Size = new System.Drawing.Size(230, 26);
+            this.відкритиCSVФайлToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
             this.відкритиCSVФайлToolStripMenuItem.Text = "Відкрити CSV файл";
             this.відкритиCSVФайлToolStripMenuItem.Click += new System.EventHandler(this.відкритиCSVФайлToolStripMenuItem_Click);
             // 
@@ -193,18 +223,18 @@
             // chart1
             // 
             this.chart1.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea9.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea9);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
             this.chart1.Cursor = System.Windows.Forms.Cursors.Cross;
-            legend9.Name = "Legend1";
-            this.chart1.Legends.Add(legend9);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(356, 119);
             this.chart1.Margin = new System.Windows.Forms.Padding(4);
             this.chart1.Name = "chart1";
-            series9.ChartArea = "ChartArea1";
-            series9.Legend = "Legend1";
-            series9.Name = "Series1";
-            this.chart1.Series.Add(series9);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(915, 574);
             this.chart1.TabIndex = 5;
             this.chart1.Text = "chart1";
@@ -375,33 +405,12 @@
             this.label6.TabIndex = 9;
             this.label6.Text = "Визначення періоду:";
             // 
-            // згенеруватиФункціюToolStripMenuItem
+            // testToolStripMenuItem
             // 
-            this.згенеруватиФункціюToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.меандрToolStripMenuItem,
-            this.пилкоподібнаToolStripMenuItem,
-            this.гармонічнаToolStripMenuItem});
-            this.згенеруватиФункціюToolStripMenuItem.Name = "згенеруватиФункціюToolStripMenuItem";
-            this.згенеруватиФункціюToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
-            this.згенеруватиФункціюToolStripMenuItem.Text = "Згенерувати функцію";
-            // 
-            // меандрToolStripMenuItem
-            // 
-            this.меандрToolStripMenuItem.Name = "меандрToolStripMenuItem";
-            this.меандрToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.меандрToolStripMenuItem.Text = "Меандр";
-            // 
-            // пилкоподібнаToolStripMenuItem
-            // 
-            this.пилкоподібнаToolStripMenuItem.Name = "пилкоподібнаToolStripMenuItem";
-            this.пилкоподібнаToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.пилкоподібнаToolStripMenuItem.Text = "Пилкоподібна";
-            // 
-            // гармонічнаToolStripMenuItem
-            // 
-            this.гармонічнаToolStripMenuItem.Name = "гармонічнаToolStripMenuItem";
-            this.гармонічнаToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.гармонічнаToolStripMenuItem.Text = "Гармонічна";
+            this.testToolStripMenuItem.Name = "testToolStripMenuItem";
+            this.testToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.testToolStripMenuItem.Text = "test";
+            this.testToolStripMenuItem.Click += new System.EventHandler(this.testToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -479,6 +488,7 @@
         private System.Windows.Forms.ToolStripMenuItem меандрToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem пилкоподібнаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem гармонічнаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
     }
 }
 

@@ -370,8 +370,11 @@ namespace master_project
             // Перевіряємо, чи можна перетворити введене значення в тип double
             if (double.TryParse(input, out double periodValue))
             {
-                // Якщо вдалося перетворити, записуємо значення у змінну period
-                period = periodValue;
+                // Округлюємо значення періоду до найближчого цілого числа
+                int roundedPeriod = (int)Math.Round(periodValue);
+
+                // Записуємо округлене значення у змінну period
+                period = roundedPeriod;
 
                 // Показуємо MessageBox з двома кнопками для вибору
                 var result = MessageBox.Show("Бажаєте продовжити дослідження покроково? Відповідь 'Ні' означає перехід до експериментального дослідження", "Вибір режиму",
@@ -397,6 +400,7 @@ namespace master_project
                 MessageBox.Show("Невірне значення для періоду.");
             }
         }
+
 
         private void FindLocalMaxima()
         {
@@ -533,10 +537,10 @@ namespace master_project
         private void testToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Параметри генерації
-            int points = 100;
-            double basePeriod = 2 * Math.PI;
-            double amplitude = 1.0;
-            double frequency = 1.0;
+            int points = 100; // Кількість точок
+            double basePeriod = 30; // Базовий період
+            double amplitude = 8.1; // Максимальна амплітуда
+            double frequency = 1.0; // Частота коливань
             double distortionLevel = 0.2; // Рівень спотворення
 
             // Генерація функцій
@@ -544,15 +548,26 @@ namespace master_project
             var distortedSawtoothWave = FunctionGeneration.GenerateDistortedSawtoothWave(points, basePeriod, amplitude, distortionLevel);
             var distortedSineWave = FunctionGeneration.GenerateDistortedSineWave(points, basePeriod, amplitude, frequency, distortionLevel);
 
-            // Шлях до робочого столу
-            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            string directoryPath = Path.Combine(desktopPath, "DistortedFunctions");
-            Directory.CreateDirectory(directoryPath);
+            // Шлях до папки проєкту
+            string projectPath = AppDomain.CurrentDomain.BaseDirectory;
+            string baseDirectoryPath = Path.Combine(projectPath, "DistortedFunctions");
+
+            // Знаходимо наступний доступний номер папки
+            int generationNumber = 1;
+            string generationDirectoryPath;
+            do
+            {
+                generationDirectoryPath = Path.Combine(baseDirectoryPath, $"Generation_{generationNumber}");
+                generationNumber++;
+            } while (Directory.Exists(generationDirectoryPath));
+
+            // Створюємо папку для генерації
+            Directory.CreateDirectory(generationDirectoryPath);
 
             // Збереження функцій
-            FunctionGeneration.SaveFunctionsToExcel(distortedSquareWave, distortedSawtoothWave, distortedSineWave, directoryPath);
+            FunctionGeneration.SaveFunctionsToExcel(distortedSquareWave, distortedSawtoothWave, distortedSineWave, generationDirectoryPath);
 
-            MessageBox.Show($"Спотворені функції збережено у папці: {directoryPath}");
+            MessageBox.Show($"Спотворені функції збережено у папці: {generationDirectoryPath}");
         }
     }
 }

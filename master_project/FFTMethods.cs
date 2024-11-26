@@ -27,10 +27,13 @@ namespace master_project
             Fourier.Forward(fft, FourierOptions.Default);
 
             // Обчислення спектру (модулів комплексних чисел)
-            double[] magnitudes = fft.Select(c => c.Magnitude).ToArray();
+            double[] magnitudes = fft.Take(signal.Length / 2).Select(c => c.Magnitude).ToArray(); // Аналізуємо лише першу половину спектру
 
             // Знаходження частоти з найвищою амплітудою
             int peakIndex = Array.IndexOf(magnitudes, magnitudes.Max());
+
+            if (peakIndex == 0)
+                throw new Exception("Не вдалося знайти домінантну частоту");
 
             // Домінантна частота в герцах
             double dominantFrequency = (double)peakIndex * samplingFrequency / signal.Length;
@@ -39,10 +42,11 @@ namespace master_project
             double periodInSeconds = 1 / dominantFrequency;
 
             // Період у кількості точок
-            double periodInPoints = (double)signal.Length / peakIndex;
+            double periodInPoints = samplingFrequency / dominantFrequency;
 
             return (periodInSeconds, periodInPoints);
         }
+
     }
 
 }

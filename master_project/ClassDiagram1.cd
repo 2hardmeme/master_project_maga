@@ -6,7 +6,7 @@
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>XSAAgASSASgAQBAAAgiAABCCAgg4AAAAMVQQByDAIEA=</HashCode>
+      <HashCode>TSAAgQSSASoCABAQAgykIBCCAgg5AAAAEXQQBwDQYEA=</HashCode>
       <FileName>1.Введення_даних.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -16,7 +16,7 @@
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>HQQAAoSAACAACBBAQACAhAICABghMACAAIACAyAACAA=</HashCode>
+      <HashCode>DQQAAoSAACAACBAAQACAhAICABghMAAAAIAAAwAACAA=</HashCode>
       <FileName>2.Середні_значення.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -26,7 +26,7 @@
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>NUZABAAwACABRBABAAiAgCAGEHgAMAAAAgAAgQCAAAA=</HashCode>
+      <HashCode>JQZABAQwACABBBABAAiAgCAiFHgAMAAAAgAAgQCAAAA=</HashCode>
       <FileName>3.Коефіцієнти_гармонік.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -36,7 +36,7 @@
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>EQQABgEgACApUBIHCAiAAIACAHh4BAggAnhJQwkAAMA=</HashCode>
+      <HashCode>AQQABgWgACApEBIHCAiAgIAiAHh4BAggAlhIQQEAAMA=</HashCode>
       <FileName>4.Амплітуди.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -46,8 +46,22 @@
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>FQAAAAAAACAAUAAAAACAAAACAAgAAAAACAgAQAAAAwA=</HashCode>
+      <HashCode>BQCAAASAACAAEBAAAADggAAiAAgAAAAACAgAQAAAgwA=</HashCode>
       <FileName>5.Обрахунок_гармонік.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="master_project.PeriodMethods">
+    <Position X="10" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FFTMethods.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FunctionGeneration">
+    <Position X="11.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQQACAAAAAAAAAAAAAAAAAAAAEAAEAQAAAAAAAA=</HashCode>
+      <FileName>FunctionGeneration.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

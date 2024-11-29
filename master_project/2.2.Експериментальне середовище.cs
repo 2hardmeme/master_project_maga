@@ -495,8 +495,8 @@ namespace master_project
         {
             double errorInPercent = error * 100;
             textBox1.Text = errorInPercent.ToString("F2") + " %";
-            double standardDeviationInPercent = standardDeviation * 100;
-            textBox2.Text = standardDeviationInPercent.ToString("F2") + " %";
+            textBox2.Text = standardDeviation.ToString("F2");
         }
+
     }
 }

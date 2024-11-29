@@ -281,16 +281,16 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(6, 54);
+            this.label7.Location = new System.Drawing.Point(5, 13);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(182, 19);
+            this.label7.Size = new System.Drawing.Size(220, 19);
             this.label7.TabIndex = 21;
-            this.label7.Text = "Абсолютна похибка:";
+            this.label7.Text = "Квадратичне відхилення:";
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(297, 54);
+            this.textBox2.Location = new System.Drawing.Point(296, 13);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 22);
             this.textBox2.TabIndex = 20;
@@ -299,7 +299,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(6, 17);
+            this.label6.Location = new System.Drawing.Point(5, 53);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(163, 19);
@@ -308,7 +308,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(297, 17);
+            this.textBox1.Location = new System.Drawing.Point(296, 53);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 22);
             this.textBox1.TabIndex = 0;

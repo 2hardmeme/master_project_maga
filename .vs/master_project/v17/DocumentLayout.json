@@ -7,6 +7,14 @@
       "RelativeMoniker": "D:0:0:{15F58BD7-64E8-40B8-9FD2-B6EAE381A900}|master_project\\master_project.csproj|solutionrelative:master_project\\1.\u0432\u0432\u0435\u0434\u0435\u043D\u043D\u044F_\u0434\u0430\u043D\u0438\u0445.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{15F58BD7-64E8-40B8-9FD2-B6EAE381A900}|master_project\\master_project.csproj|d:\\doucments\\university\\\u043C\u0430\u0433\u0456\u0441\u0442\u0435\u0440\u0441\u044C\u043A\u0430\\master_project\\master_project\\2.2.\u0435\u043A\u0441\u043F\u0435\u0440\u0438\u043C\u0435\u043D\u0442\u0430\u043B\u044C\u043D\u0435 \u0441\u0435\u0440\u0435\u0434\u043E\u0432\u0438\u0449\u0435.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15F58BD7-64E8-40B8-9FD2-B6EAE381A900}|master_project\\master_project.csproj|solutionrelative:master_project\\2.2.\u0435\u043A\u0441\u043F\u0435\u0440\u0438\u043C\u0435\u043D\u0442\u0430\u043B\u044C\u043D\u0435 \u0441\u0435\u0440\u0435\u0434\u043E\u0432\u0438\u0449\u0435.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15F58BD7-64E8-40B8-9FD2-B6EAE381A900}|master_project\\master_project.csproj|d:\\doucments\\university\\\u043C\u0430\u0433\u0456\u0441\u0442\u0435\u0440\u0441\u044C\u043A\u0430\\master_project\\master_project\\2.2.\u0435\u043A\u0441\u043F\u0435\u0440\u0438\u043C\u0435\u043D\u0442\u0430\u043B\u044C\u043D\u0435 \u0441\u0435\u0440\u0435\u0434\u043E\u0432\u0438\u0449\u0435.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{15F58BD7-64E8-40B8-9FD2-B6EAE381A900}|master_project\\master_project.csproj|solutionrelative:master_project\\2.2.\u0435\u043A\u0441\u043F\u0435\u0440\u0438\u043C\u0435\u043D\u0442\u0430\u043B\u044C\u043D\u0435 \u0441\u0435\u0440\u0435\u0434\u043E\u0432\u0438\u0449\u0435.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{15F58BD7-64E8-40B8-9FD2-B6EAE381A900}|master_project\\master_project.csproj|D:\\Doucments\\University\\\u043C\u0430\u0433\u0456\u0441\u0442\u0435\u0440\u0441\u044C\u043A\u0430\\master_project\\master_project\\1.\u0432\u0432\u0435\u0434\u0435\u043D\u043D\u044F_\u0434\u0430\u043D\u0438\u0445.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{15F58BD7-64E8-40B8-9FD2-B6EAE381A900}|master_project\\master_project.csproj|solutionrelative:master_project\\1.\u0432\u0432\u0435\u0434\u0435\u043D\u043D\u044F_\u0434\u0430\u043D\u0438\u0445.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
@@ -26,11 +34,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "2.2.\u0415\u043A\u0441\u043F\u0435\u0440\u0438\u043C\u0435\u043D\u0442\u0430\u043B\u044C\u043D\u0435 \u0441\u0435\u0440\u0435\u0434\u043E\u0432\u0438\u0449\u0435.cs",
+              "DocumentMoniker": "D:\\Doucments\\University\\\u043C\u0430\u0433\u0456\u0441\u0442\u0435\u0440\u0441\u044C\u043A\u0430\\master_project\\master_project\\2.2.\u0415\u043A\u0441\u043F\u0435\u0440\u0438\u043C\u0435\u043D\u0442\u0430\u043B\u044C\u043D\u0435 \u0441\u0435\u0440\u0435\u0434\u043E\u0432\u0438\u0449\u0435.cs",
+              "RelativeDocumentMoniker": "master_project\\2.2.\u0415\u043A\u0441\u043F\u0435\u0440\u0438\u043C\u0435\u043D\u0442\u0430\u043B\u044C\u043D\u0435 \u0441\u0435\u0440\u0435\u0434\u043E\u0432\u0438\u0449\u0435.cs",
+              "ToolTip": "D:\\Doucments\\University\\\u043C\u0430\u0433\u0456\u0441\u0442\u0435\u0440\u0441\u044C\u043A\u0430\\master_project\\master_project\\2.2.\u0415\u043A\u0441\u043F\u0435\u0440\u0438\u043C\u0435\u043D\u0442\u0430\u043B\u044C\u043D\u0435 \u0441\u0435\u0440\u0435\u0434\u043E\u0432\u0438\u0449\u0435.cs",
+              "RelativeToolTip": "master_project\\2.2.\u0415\u043A\u0441\u043F\u0435\u0440\u0438\u043C\u0435\u043D\u0442\u0430\u043B\u044C\u043D\u0435 \u0441\u0435\u0440\u0435\u0434\u043E\u0432\u0438\u0449\u0435.cs",
+              "ViewState": "AQIAAM8BAAAAAAAAAAAcwOIBAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T21:18:01.408Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "2.2.\u0415\u043A\u0441\u043F\u0435\u0440\u0438\u043C\u0435\u043D\u0442\u0430\u043B\u044C\u043D\u0435 \u0441\u0435\u0440\u0435\u0434\u043E\u0432\u0438\u0449\u0435.cs [Design]",
+              "DocumentMoniker": "D:\\Doucments\\University\\\u043C\u0430\u0433\u0456\u0441\u0442\u0435\u0440\u0441\u044C\u043A\u0430\\master_project\\master_project\\2.2.\u0415\u043A\u0441\u043F\u0435\u0440\u0438\u043C\u0435\u043D\u0442\u0430\u043B\u044C\u043D\u0435 \u0441\u0435\u0440\u0435\u0434\u043E\u0432\u0438\u0449\u0435.cs",
+              "RelativeDocumentMoniker": "master_project\\2.2.\u0415\u043A\u0441\u043F\u0435\u0440\u0438\u043C\u0435\u043D\u0442\u0430\u043B\u044C\u043D\u0435 \u0441\u0435\u0440\u0435\u0434\u043E\u0432\u0438\u0449\u0435.cs",
+              "ToolTip": "D:\\Doucments\\University\\\u043C\u0430\u0433\u0456\u0441\u0442\u0435\u0440\u0441\u044C\u043A\u0430\\master_project\\master_project\\2.2.\u0415\u043A\u0441\u043F\u0435\u0440\u0438\u043C\u0435\u043D\u0442\u0430\u043B\u044C\u043D\u0435 \u0441\u0435\u0440\u0435\u0434\u043E\u0432\u0438\u0449\u0435.cs [Design]",
+              "RelativeToolTip": "master_project\\2.2.\u0415\u043A\u0441\u043F\u0435\u0440\u0438\u043C\u0435\u043D\u0442\u0430\u043B\u044C\u043D\u0435 \u0441\u0435\u0440\u0435\u0434\u043E\u0432\u0438\u0449\u0435.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T12:26:41.363Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "FFTMethods.cs",
               "DocumentMoniker": "D:\\Doucments\\University\\\u043C\u0430\u0433\u0456\u0441\u0442\u0435\u0440\u0441\u044C\u043A\u0430\\master_project\\master_project\\FFTMethods.cs",
               "RelativeDocumentMoniker": "master_project\\FFTMethods.cs",
@@ -43,7 +77,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "1.\u0412\u0432\u0435\u0434\u0435\u043D\u043D\u044F_\u0434\u0430\u043D\u0438\u0445.cs [Design]",
               "DocumentMoniker": "D:\\Doucments\\University\\\u043C\u0430\u0433\u0456\u0441\u0442\u0435\u0440\u0441\u044C\u043A\u0430\\master_project\\master_project\\1.\u0412\u0432\u0435\u0434\u0435\u043D\u043D\u044F_\u0434\u0430\u043D\u0438\u0445.cs",
               "RelativeDocumentMoniker": "master_project\\1.\u0412\u0432\u0435\u0434\u0435\u043D\u043D\u044F_\u0434\u0430\u043D\u0438\u0445.cs",
@@ -61,14 +95,14 @@
               "RelativeDocumentMoniker": "master_project\\1.\u0412\u0432\u0435\u0434\u0435\u043D\u043D\u044F_\u0434\u0430\u043D\u0438\u0445.cs",
               "ToolTip": "D:\\Doucments\\University\\\u043C\u0430\u0433\u0456\u0441\u0442\u0435\u0440\u0441\u044C\u043A\u0430\\master_project\\master_project\\1.\u0412\u0432\u0435\u0434\u0435\u043D\u043D\u044F_\u0434\u0430\u043D\u0438\u0445.cs",
               "RelativeToolTip": "master_project\\1.\u0412\u0432\u0435\u0434\u0435\u043D\u043D\u044F_\u0434\u0430\u043D\u0438\u0445.cs",
-              "ViewState": "AQIAAHMBAAAAAAAAAAAQwJIBAAAAAAAA",
+              "ViewState": "AQIAAPwAAAAAAAAAAAAlwBEBAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-24T17:33:14.042Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "FunctionGeneration.cs",
               "DocumentMoniker": "D:\\Doucments\\University\\\u043C\u0430\u0433\u0456\u0441\u0442\u0435\u0440\u0441\u044C\u043A\u0430\\master_project\\master_project\\FunctionGeneration.cs",
               "RelativeDocumentMoniker": "master_project\\FunctionGeneration.cs",

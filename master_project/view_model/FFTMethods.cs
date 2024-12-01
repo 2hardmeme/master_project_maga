@@ -16,18 +16,31 @@ namespace master_project
             if (signal == null || signal.Length == 0)
                 throw new ArgumentException("Сигнал не може бути порожнім");
 
-            // Перетворення сигналу в масив комплексних чисел
-            Complex[] fft = new Complex[signal.Length];
-            for (int i = 0; i < signal.Length; i++)
+            int N = signal.Length;
+
+            // Масиви для зберігання реальних та уявних частин
+            double[] real = new double[N];
+            double[] imag = new double[N];
+
+            // Обчислення дискретного перетворення Фур'є (DFT)
+            for (int k = 0; k < N; k++)
             {
-                fft[i] = new Complex(signal[i], 0);
+                real[k] = 0;
+                imag[k] = 0;
+                for (int n = 0; n < N; n++)
+                {
+                    double angle = 2 * Math.PI * k * n / N;
+                    real[k] += signal[n] * Math.Cos(angle);
+                    imag[k] += -signal[n] * Math.Sin(angle);
+                }
             }
 
-            // Виконання швидкого перетворення Фур'є (FFT)
-            Fourier.Forward(fft, FourierOptions.Default);
-
             // Обчислення спектру (модулів комплексних чисел)
-            double[] magnitudes = fft.Take(signal.Length / 2).Select(c => c.Magnitude).ToArray(); // Аналізуємо лише першу половину спектру
+            double[] magnitudes = new double[N / 2]; // Аналізуємо лише першу половину спектру
+            for (int i = 0; i < N / 2; i++)
+            {
+                magnitudes[i] = Math.Sqrt(real[i] * real[i] + imag[i] * imag[i]);
+            }
 
             // Знаходження частоти з найвищою амплітудою
             int peakIndex = Array.IndexOf(magnitudes, magnitudes.Max());
@@ -36,17 +49,16 @@ namespace master_project
                 throw new Exception("Не вдалося знайти домінантну частоту");
 
             // Домінантна частота в герцах
-            double dominantFrequency = (double)peakIndex * samplingFrequency / signal.Length;
+            double dominantFrequency = (double)peakIndex * samplingFrequency / N;
 
             // Період у секундах
             double periodInSeconds = 1 / dominantFrequency;
 
             // Період у кількості точок
-            double periodInPoints = samplingFrequency / dominantFrequency;
+            double periodInPoints = (double)N / peakIndex;
 
             return (periodInSeconds, periodInPoints);
+
         }
-
     }
-
 }

@@ -34,6 +34,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.згенеруватиФункціюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.меандрToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.пилкоподібнаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.гармонічнаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,7 +64,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -109,22 +109,29 @@
             this.згенеруватиФункціюToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
             this.згенеруватиФункціюToolStripMenuItem.Text = "Згенерувати функцію";
             // 
+            // testToolStripMenuItem
+            // 
+            this.testToolStripMenuItem.Name = "testToolStripMenuItem";
+            this.testToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.testToolStripMenuItem.Text = "test";
+            this.testToolStripMenuItem.Click += new System.EventHandler(this.testToolStripMenuItem_Click);
+            // 
             // меандрToolStripMenuItem
             // 
             this.меандрToolStripMenuItem.Name = "меандрToolStripMenuItem";
-            this.меандрToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.меандрToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
             this.меандрToolStripMenuItem.Text = "Меандр";
             // 
             // пилкоподібнаToolStripMenuItem
             // 
             this.пилкоподібнаToolStripMenuItem.Name = "пилкоподібнаToolStripMenuItem";
-            this.пилкоподібнаToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.пилкоподібнаToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
             this.пилкоподібнаToolStripMenuItem.Text = "Пилкоподібна";
             // 
             // гармонічнаToolStripMenuItem
             // 
             this.гармонічнаToolStripMenuItem.Name = "гармонічнаToolStripMenuItem";
-            this.гармонічнаToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.гармонічнаToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
             this.гармонічнаToolStripMenuItem.Text = "Гармонічна";
             // 
             // відкритиExcelФайлToolStripMenuItem
@@ -405,13 +412,6 @@
             this.label6.TabIndex = 9;
             this.label6.Text = "Визначення періоду:";
             // 
-            // testToolStripMenuItem
-            // 
-            this.testToolStripMenuItem.Name = "testToolStripMenuItem";
-            this.testToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.testToolStripMenuItem.Text = "test";
-            this.testToolStripMenuItem.Click += new System.EventHandler(this.testToolStripMenuItem_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -432,7 +432,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Введення даних";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Shown += new System.EventHandler(this.Form1_Shown);
             this.menuStrip1.ResumeLayout(false);

@@ -18,11 +18,12 @@ namespace master_project
         private double a0;
         private string[] tDots;
         private string[] yDots;
+        private string fourierFormula;
 
         private double[][] harmonics; // Масив для зберігання гармонік
         private double[][] harmonicSums; // Масив для зберігання сум гармонік
 
-        public Form5(double[] newA1coefficients, double[] newB1coefficients, double[] transitXValues, double a0, string[] tDots, string[] yDots)
+        public Form5(double[] newA1coefficients, double[] newB1coefficients, double[] transitXValues, double a0, string[] tDots, string[] yDots, string fourierFormula)
         {
             InitializeComponent();
 
@@ -33,6 +34,7 @@ namespace master_project
             this.a0 = a0;
             this.tDots = tDots;
             this.yDots = yDots;
+            this.fourierFormula = fourierFormula;
             double firstA0 = a0 / 2;
 
             CalculateHarmonics(); // Виклик методу для обчислення гармонік
@@ -115,7 +117,7 @@ namespace master_project
 
         private void результатиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form6 form6 = new Form6(yDots, harmonicSums);
+            Form6 form6 = new Form6(yDots, harmonicSums, fourierFormula);
             form6.Show();
         }
     }

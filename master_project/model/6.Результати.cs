@@ -1,4 +1,7 @@
-﻿using System;
+﻿using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml;
+using DocumentFormat.OpenXml.Wordprocessing;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace master_project
 {
@@ -14,6 +18,7 @@ namespace master_project
     {
         private string[] yDots;
         private double[][] harmonicSums;
+        private string fourierFormula;
 
         private double[] harmonicSignal; // Оголошення нового одновимірного масиву
         private double[] allHarmonicsSum;
@@ -24,11 +29,12 @@ namespace master_project
         private double standardDeviation;
         private double error;
 
-        public Form6(string[] yDots, double[][] harmonicSums)
+        public Form6(string[] yDots, double[][] harmonicSums, string fourierFormula)
         {
             InitializeComponent();
             this.yDots = yDots;
             this.harmonicSums = harmonicSums;
+            this.fourierFormula = fourierFormula;
 
             FillAllHarmonicsSum();
             FillHarmonicSignal();
@@ -111,6 +117,31 @@ namespace master_project
             error = standardDeviation / maxHarmonic;
         }
 
-        
+        private void SaveFormulaToWord(string formula, string filePath)
+        {
+            using (WordprocessingDocument wordDocument = WordprocessingDocument.Create(filePath, WordprocessingDocumentType.Document))
+            {
+                // Додаємо основну частину документа
+                MainDocumentPart mainPart = wordDocument.AddMainDocumentPart();
+                mainPart.Document = new Document();
+                Body body = mainPart.Document.AppendChild(new Body());
+
+                // Додаємо параграф з формулою
+                Paragraph paragraph = new Paragraph();
+                Run run = new Run();
+
+                // Додаємо формулу як текст (можна адаптувати до MathML, якщо потрібно)
+                run.Append(new Text($"Формула Фур'є: {formula}"));
+                paragraph.Append(run);
+                body.Append(paragraph);
+            }
+
+            MessageBox.Show("Формула збережена у файл: " + filePath, "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SaveFormulaToWord(fourierFormula, "FourierFormula.docx");
+        }
     }
 }

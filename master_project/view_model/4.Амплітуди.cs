@@ -284,7 +284,7 @@ namespace master_project
         private void обрахунокГармонікToolStripMenuItem_Click(object sender, EventArgs e)
         {
             GenerateFourierFormula();
-            Form5 form5 = new Form5(newA1coefficients, newB1coefficients, transitXValues, a0, tDots, yDots);
+            Form5 form5 = new Form5(newA1coefficients, newB1coefficients, transitXValues, a0, tDots, yDots, fourierFormula);
             form5.Show();
         }
 

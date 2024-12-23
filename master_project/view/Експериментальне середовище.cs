@@ -497,6 +497,5 @@ namespace master_project
             textBox1.Text = errorInPercent.ToString("F2") + " %";
             textBox2.Text = standardDeviation.ToString("F2");
         }
-
     }
 }

@@ -36,6 +36,8 @@ namespace master_project
         private double[] newB1coefficients;
         private double[] newPercentages;
 
+        private string fourierFormula;
+
         public Form4(double omega, double m, double periodDouble, double[,] columnSums, double[] xValues, double a0, string[] tDots, string[] yDots)
         {
             InitializeComponent();
@@ -57,11 +59,7 @@ namespace master_project
 
         private void Form4_Load(object sender, EventArgs e)
         {
-            //InitializeTrackBar();
             TransitXValues();
-
-            //CalculateOmegaThing();
-            //DisplayOmegaThing();
 
             CalculateAandBcoefficients();
             DisplayCoefficients();
@@ -74,31 +72,6 @@ namespace master_project
             CalculatePercentages();
             DisplayPercentages();
         }
-
-        //private void CalculateOmegaThing()
-        //{
-        //    // Ініціалізуємо масив omegaThing заздалегідь
-        //    omegaThing = new double[(int)m]; // m може бути неціле, тому приводимо до int
-        //    for (int i = 0; i < omegaThing.Length; i++)
-        //    {
-        //        omegaThing[i] = (i + 1) * omega;
-        //    }
-        //}
-
-        //private void DisplayOmegaThing()
-        //{
-        //    // Очистимо dataGridView1 перед додаванням нових даних
-        //    dataGridView1.Rows.Clear();
-
-        //    // Додамо стовпець для значень omegaThing
-        //    dataGridView1.Columns.Add("OmegaThing", "OmegaThing");
-
-        //    // Додамо значення з масиву omegaThing до dataGridView1
-        //    for (int i = 0; i < omegaThing.Length; i++)
-        //    {
-        //        dataGridView1.Rows.Add(omegaThing[i]);
-        //    }
-        //}
 
         private double[] TransitXValues()
         {
@@ -234,77 +207,6 @@ namespace master_project
             }
         }
 
-        //private void RemoveRowsLessThanValue(int value)
-        //{
-        //    List<int> rowsToDelete = new List<int>();
-
-        //    // Проходимося по всім рядкам dataGridView4 знизу вгору
-        //    for (int i = dataGridView4.Rows.Count - 1; i >= 0; i--)
-        //    {
-        //        // Отримуємо значення комірки у відповідному рядку dataGridView4
-        //        int cellValue;
-        //        if (dataGridView4.Rows[i].Cells[0].Value != null && int.TryParse(dataGridView4.Rows[i].Cells[0].Value.ToString(), out cellValue))
-        //        {
-        //            // Перевіряємо, чи значення менше вибраного користувачем значення
-        //            if (cellValue < value)
-        //            {
-        //                // Зберігаємо індекс рядка для видалення
-        //                rowsToDelete.Add(i);
-        //            }
-        //        }
-        //    }
-
-        //    // Видаляємо рядки у зворотньому порядку, щоб уникнути проблем з індексацією
-        //    for (int i = rowsToDelete.Count - 1; i >= 0; i--)
-        //    {
-        //        int rowIndex = rowsToDelete[i];
-
-        //        // Видаляємо відповідні рядки у всіх DataGridView
-        //        if (rowIndex < dataGridView1.Rows.Count)
-        //        {
-        //            dataGridView1.Rows.RemoveAt(rowIndex);
-        //        }
-        //        if (rowIndex < dataGridView2.Rows.Count)
-        //        {
-        //            dataGridView2.Rows.RemoveAt(rowIndex);
-        //        }
-        //        if (rowIndex < dataGridView3.Rows.Count)
-        //        {
-        //            dataGridView3.Rows.RemoveAt(rowIndex);
-        //        }
-        //        dataGridView4.Rows.RemoveAt(rowIndex);
-        //    }
-        //}
-
-        //private void InitializeTrackBar()
-        //{
-        //    trackBar1.Minimum = 1;
-        //    trackBar1.Maximum = 100;
-        //    trackBar1.Value = 25; // Значення за замовчуванням
-        //    trackBar1.TickStyle = TickStyle.None; // Відключаємо відображення позначок
-        //    trackBar1.ValueChanged += trackBar1_ValueChanged; // Додаємо обробник події
-        //}
-
-        //private void trackBar1_ValueChanged(object sender, EventArgs e)
-        //{
-        //    // Отримуємо нове значення з повзунка
-        //    int newValue = trackBar1.Value;
-
-        //    // Відображаємо нове значення в мітці або іншому елементі для відображення
-        //    label1.Text = "" + newValue;
-        //}
-
-        //private void button2_Click(object sender, EventArgs e)
-        //{
-        //    {
-        //        // Отримуємо поточне значення на повзунку
-        //        int currentValue = trackBar1.Value;
-
-        //        // Викликаємо метод для видалення рядків з усіх DataGridView
-        //        RemoveRowsLessThanValue(currentValue);
-        //    }
-        //}
-
         private void UpdateArraysFromDataGridViews()
         {
             // Оновлюємо масив newAmplitudes з dataGridView1
@@ -381,8 +283,39 @@ namespace master_project
 
         private void обрахунокГармонікToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            GenerateFourierFormula();
             Form5 form5 = new Form5(newA1coefficients, newB1coefficients, transitXValues, a0, tDots, yDots);
             form5.Show();
-        } 
+        }
+
+        private void GenerateFourierFormula()
+        {
+            StringBuilder formulaBuilder = new StringBuilder();
+
+            // Додаємо початкову частину формули
+            formulaBuilder.Append($"f(t) = {a0 / 2}");
+
+            // Додаємо гармонійні члени
+            for (int n = 0; n < newA1coefficients.Length; n++)
+            {
+                double a_n = newA1coefficients[n];
+                double b_n = newB1coefficients[n];
+                int harmonic = n + 1;
+
+                if (a_n != 0)
+                {
+                    formulaBuilder.Append($" + {a_n} * cos({harmonic} * {omega} * {periodDouble})");
+                }
+
+                if (b_n != 0)
+                {
+                    formulaBuilder.Append($" + {b_n} * sin({harmonic} * {omega} * {periodDouble})");
+                }
+            }
+
+            // Зберігаємо формулу у змінну
+            fourierFormula = formulaBuilder.ToString();
+        }
+
     }
 }

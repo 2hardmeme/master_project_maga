@@ -46,12 +46,20 @@ namespace master_project
 
         private void Form6_Load(object sender, EventArgs e)
         {
-            textBox1.Enabled = false;
-            textBox2.Enabled = false;
             textBox3.Enabled = false;
             textBox4.Enabled = false;
-            textBox5.Enabled = false;
+            //textBox5.Enabled = false;
+
+            // Виводимо значення standardDeviation у textBox3
+            textBox3.Text = standardDeviation.ToString("F4"); // Формат до 4 знаків після коми
+
+            // Виводимо значення error у textBox4 у відсотках
+            textBox4.Text = (error * 100).ToString("F2") + " %"; // Формат до 2 знаків після коми
+
+            // Виводимо значення fourierFormula у textBox5
+            textBox5.Text = fourierFormula;
         }
+
 
         private void FillAllHarmonicsSum()
         {

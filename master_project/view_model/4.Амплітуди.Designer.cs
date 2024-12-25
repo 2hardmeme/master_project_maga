@@ -153,14 +153,14 @@
             this.обрахунокГармонікToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1634, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(934, 24);
             this.menuStrip1.TabIndex = 10;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(77, 24);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(61, 20);
             this.toolStripMenuItem1.Text = "Довідка";
             // 
             // обрахунокГармонікToolStripMenuItem
@@ -169,7 +169,7 @@
             this.обрахунокГармонікToolStripMenuItem.BackColor = System.Drawing.Color.IndianRed;
             this.обрахунокГармонікToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.обрахунокГармонікToolStripMenuItem.Name = "обрахунокГармонікToolStripMenuItem";
-            this.обрахунокГармонікToolStripMenuItem.Size = new System.Drawing.Size(166, 24);
+            this.обрахунокГармонікToolStripMenuItem.Size = new System.Drawing.Size(133, 20);
             this.обрахунокГармонікToolStripMenuItem.Text = "Обрахунок гармонік";
             this.обрахунокГармонікToolStripMenuItem.Click += new System.EventHandler(this.обрахунокГармонікToolStripMenuItem_Click);
             // 
@@ -216,7 +216,7 @@
             this.label4.Location = new System.Drawing.Point(1212, 41);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(167, 24);
+            this.label4.Size = new System.Drawing.Size(138, 19);
             this.label4.TabIndex = 12;
             this.label4.Text = "Фазовий спектр";
             // 
@@ -225,7 +225,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(1634, 605);
+            this.ClientSize = new System.Drawing.Size(934, 605);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.button1);
@@ -241,7 +241,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form4";
-            this.Text = "Form4";
+            this.Text = "Амплітуди";
             this.Load += new System.EventHandler(this.Form4_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();

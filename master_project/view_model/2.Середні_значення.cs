@@ -18,18 +18,22 @@ namespace master_project
         private double period;
         private string[] yDots;
         private string[] xDots;
+        private double[] DYDots;
+        private double[] DXDots;
 
         private double periodDouble; // Нова змінна для періоду у форматі double
         private double[] AveragesSum;
         private string[] tDots; // Оголошуємо як поле класу
         private double Suma; // Поле для зберігання суми всіх елементів масиву AveragesSum
 
-        public Form2(double period, string[] yDots, string[] xDots)
+        public Form2(double period, string[] yDots, string[] xDots, double[] DYDots, double[] DXDots)
         {
             InitializeComponent();
             this.period = period;
             this.yDots = yDots;
             this.xDots = xDots;
+            this.DYDots = DYDots;
+            this.DXDots = DXDots;
 
             periodDouble = (double)period;
             // Викликаємо метод, щоб ініціалізувати tDots
@@ -39,13 +43,12 @@ namespace master_project
         private void InitializeTDots()
         {
             tDots = new string[(int)periodDouble];
-            // Викликаємо метод CopyArray, передаючи масиви xDots і tDots
             CopyArray(xDots, tDots);
         }
 
         private void обрахунокКоефіцієнтівГармонікToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form3 form3 = new Form3(tDots, AveragesSum, periodDouble, yDots);
+            Form3 form3 = new Form3(tDots, AveragesSum, periodDouble, yDots, DXDots, DYDots);
             form3.Show();
         }
 

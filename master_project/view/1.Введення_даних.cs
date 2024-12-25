@@ -35,6 +35,8 @@ namespace master_project
 
         private double samplingFrequency = 100; // Частота дискретизації сигналу
         private double[] DYDots;
+        private double[] DXDots;
+
         private List<(int index, double value)> localMaximaValues = new List<(int index, double value)>();
 
         public Form1()
@@ -123,12 +125,11 @@ namespace master_project
                     textBoxX.Visible = true;
                     textBoxY.Visible = true;
 
-                    //переписуємо точки У в одновимірний масив
                     yDots = ExtractSecondColumn(excelData);
-                    ConvertYDotsToDYDots();
                     xDots = ExtractFirstColumn(excelData);
+                    ConvertYDotsToDYDots();
+                    ConvertXDotsToDXDots();
 
-                    // Зробити textBox2 та button1 активними
                     textBox2.Enabled = true;
                     textBox2.Text = "";
                     button1.Enabled = true;
@@ -168,18 +169,6 @@ namespace master_project
                             dataGridView1.Rows[i].Cells[j].Value = data[i, j];
                         }
                     }
-                    // Створення графіка з використанням даних з CSV файлу
-                    //CreateChart(data);
-
-                    //переписуємо точки У в одновимірний масив
-                    //string[] yDots = ExtractSecondColumn(excelData);
-
-                    //
-                    //
-                    //поки не створюємо чарт, бо він ламається чомусь(
-                    //
-                    //
-
                 }
             }
         }
@@ -362,6 +351,23 @@ namespace master_project
             }
         }
 
+        private void ConvertXDotsToDXDots()
+        {
+            DXDots = new double[xDots.Length];
+
+            for (int i = 0; i < xDots.Length; i++)
+            {
+                if (double.TryParse(xDots[i], out double value))
+                {
+                    DXDots[i] = value;
+                }
+                else
+                {
+                    DXDots[i] = 0;
+                }
+            }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             // Зчитуємо значення з textBox2
@@ -384,7 +390,7 @@ namespace master_project
                 if (result == DialogResult.Yes)
                 {
                     // Якщо натиснули "Yes" (умовно: "Покроково")
-                    Form2 form2 = new Form2(period, yDots, xDots);
+                    Form2 form2 = new Form2(period, yDots, xDots, DYDots, DXDots);
                     form2.Show();
                 }
                 else

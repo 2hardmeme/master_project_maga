@@ -1,6 +1,7 @@
 ﻿using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Wordprocessing;
+using System.Windows.Forms.DataVisualization.Charting;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,8 @@ namespace master_project
         private string[] yDots;
         private double[][] harmonicSums;
         private string fourierFormula;
+        private double[] DYDots;
+        private double[] DXDots;
 
         private double[] harmonicSignal; // Оголошення нового одновимірного масиву
         private double[] allHarmonicsSum;
@@ -29,12 +32,14 @@ namespace master_project
         private double standardDeviation;
         private double error;
 
-        public Form6(string[] yDots, double[][] harmonicSums, string fourierFormula)
+        public Form6(string[] yDots, double[][] harmonicSums, string fourierFormula, double[] DYDots, double[] DXDots)
         {
             InitializeComponent();
             this.yDots = yDots;
             this.harmonicSums = harmonicSums;
             this.fourierFormula = fourierFormula;
+            this.DYDots = DYDots;
+            this.DXDots = DXDots;
 
             FillAllHarmonicsSum();
             FillHarmonicSignal();
@@ -42,13 +47,18 @@ namespace master_project
             CalculateRootOfSum();
             CalculateStandardDeviation();
             CalculateError();
+
+            SetupChartAxisFormatting();
+            EnableZooming();
+
+            PlotGraphs(); // Викликаємо метод для побудови графіків
+
         }
 
         private void Form6_Load(object sender, EventArgs e)
         {
             textBox3.Enabled = false;
             textBox4.Enabled = false;
-            //textBox5.Enabled = false;
 
             // Виводимо значення standardDeviation у textBox3
             textBox3.Text = standardDeviation.ToString("F4"); // Формат до 4 знаків після коми
@@ -58,6 +68,105 @@ namespace master_project
 
             // Виводимо значення fourierFormula у textBox5
             textBox5.Text = fourierFormula;
+        }
+
+        private void PlotGraphs()
+        {
+            // Очищаємо існуючі серії на графіку
+            chart1.Series.Clear();
+
+            // Створюємо першу серію для сигналу
+            var signalSeries = new System.Windows.Forms.DataVisualization.Charting.Series
+            {
+                Name = "Сигнал",
+                ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line,
+                BorderWidth = 2,
+                Color = System.Drawing.Color.Blue
+            };
+
+            // Додаємо дані для сигналу (DYDots)
+            for (int i = 0; i < DXDots.Length; i++)
+            {
+                signalSeries.Points.AddXY(DXDots[i], DYDots[i]);
+            }
+
+            // Додаємо першу серію до графіку
+            chart1.Series.Add(signalSeries);
+
+            // Створюємо другу серію для тригонометричного многочлена
+            var polySeries = new System.Windows.Forms.DataVisualization.Charting.Series
+            {
+                Name = "Тригонометричний многочлен",
+                ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line,
+                BorderWidth = 2,
+                Color = System.Drawing.Color.Red
+            };
+
+            // Додаємо дані для тригонометричного многочлена (harmonicSignal)
+            for (int i = 0; i < DXDots.Length; i++)
+            {
+                polySeries.Points.AddXY(DXDots[i], harmonicSignal[i]);
+            }
+
+            // Додаємо другу серію до графіку
+            chart1.Series.Add(polySeries);
+        }
+
+        private void EnableZooming()
+        {
+            // Увімкнення масштабування на осі X
+            chart1.ChartAreas[0].AxisX.ScaleView.Zoomable = true;
+
+            // Увімкнення масштабування на осі Y
+            chart1.ChartAreas[0].AxisY.ScaleView.Zoomable = true;
+
+            // Налаштування кнопки миші для зуму (наприклад, колесо миші)
+            chart1.MouseWheel += Chart1_MouseWheel;
+        }
+
+        private void SetupChartAxisFormatting()
+        {
+            var chartArea = chart1.ChartAreas[0];
+
+            // Встановлюємо формат чисел на осях
+            chartArea.AxisX.LabelStyle.Format = "F1"; // 1 знак після коми
+            chartArea.AxisY.LabelStyle.Format = "F1"; // 1 знак після коми
+        }
+
+        private void Chart1_MouseWheel(object sender, MouseEventArgs e)
+        {
+            var chart = (Chart)sender;
+            var chartArea = chart.ChartAreas[0];
+            double zoomFactor = 0.1; // Крок масштабування (10%)
+
+            if (e.Delta < 0) // Прокрутка вниз
+            {
+                chartArea.AxisX.ScaleView.ZoomReset(); // Скидання масштабу по осі X
+                chartArea.AxisY.ScaleView.ZoomReset(); // Скидання масштабу по осі Y
+            }
+            else if (e.Delta > 0) // Прокрутка вгору
+            {
+                try
+                {
+                    // Поточні межі вікна масштабування
+                    double xMin = chartArea.AxisX.ScaleView.ViewMinimum;
+                    double xMax = chartArea.AxisX.ScaleView.ViewMaximum;
+                    double yMin = chartArea.AxisY.ScaleView.ViewMinimum;
+                    double yMax = chartArea.AxisY.ScaleView.ViewMaximum;
+
+                    // Розрахунок нових меж масштабування
+                    double xZoom = (xMax - xMin) * zoomFactor;
+                    double yZoom = (yMax - yMin) * zoomFactor;
+
+                    // Нові межі масштабування
+                    chartArea.AxisX.ScaleView.Zoom(xMin + xZoom, xMax - xZoom);
+                    chartArea.AxisY.ScaleView.Zoom(yMin + yZoom, yMax - yZoom);
+                }
+                catch
+                {
+                    // Ігнорування помилок (наприклад, коли масштабування виходить за межі допустимих значень)
+                }
+            }
         }
 
 

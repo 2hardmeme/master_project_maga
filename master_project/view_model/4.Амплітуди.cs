@@ -21,9 +21,9 @@ namespace master_project
         private double a0;
         private string[] tDots;
         private string[] yDots;
+        private double[] AveragesSum;
 
         private double[] transitXValues;
-        //private double[] omegaThing;
         private double[] a1coefficients;
         private double[] b1coefficients;
 
@@ -36,9 +36,11 @@ namespace master_project
         private double[] newB1coefficients;
         private double[] newPercentages;
 
+        private double[] DYDots;
+        private double[] DXDots;
         private string fourierFormula;
 
-        public Form4(double omega, double m, double periodDouble, double[,] columnSums, double[] xValues, double a0, string[] tDots, string[] yDots)
+        public Form4(double omega, double m, double periodDouble, double[,] columnSums, double[] xValues, double a0, string[] tDots, string[] yDots, double[] AveragesSum, double[] DYDots, double[] DXDots)
         {
             InitializeComponent();
 
@@ -54,6 +56,10 @@ namespace master_project
             this.a0 = a0;
             this.tDots = tDots;
             this.yDots = yDots;
+            this.AveragesSum = AveragesSum;
+
+            this.DYDots = DYDots;
+            this.DXDots = DXDots;
         }
 
 
@@ -284,7 +290,7 @@ namespace master_project
         private void обрахунокГармонікToolStripMenuItem_Click(object sender, EventArgs e)
         {
             GenerateFourierFormula();
-            Form5 form5 = new Form5(newA1coefficients, newB1coefficients, transitXValues, a0, tDots, yDots, fourierFormula);
+            Form5 form5 = new Form5(newA1coefficients, newB1coefficients, transitXValues, a0, tDots, yDots, fourierFormula, AveragesSum, DXDots, DYDots);
             form5.Show();
         }
 

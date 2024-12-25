@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace master_project
 {
@@ -19,11 +20,14 @@ namespace master_project
         private string[] tDots;
         private string[] yDots;
         private string fourierFormula;
+        private double[] AveragesSum;
+        private double[] DYDots;
+        private double[] DXDots;
 
         private double[][] harmonics; // Масив для зберігання гармонік
         private double[][] harmonicSums; // Масив для зберігання сум гармонік
 
-        public Form5(double[] newA1coefficients, double[] newB1coefficients, double[] transitXValues, double a0, string[] tDots, string[] yDots, string fourierFormula)
+        public Form5(double[] newA1coefficients, double[] newB1coefficients, double[] transitXValues, double a0, string[] tDots, string[] yDots, string fourierFormula, double[] AveragesSum, double[] DYDots, double[] DXDots)
         {
             InitializeComponent();
 
@@ -35,11 +39,21 @@ namespace master_project
             this.tDots = tDots;
             this.yDots = yDots;
             this.fourierFormula = fourierFormula;
+            this.AveragesSum = AveragesSum;
             double firstA0 = a0 / 2;
+
+            this.DYDots = DYDots;
+            this.DXDots = DXDots;
 
             CalculateHarmonics(); // Виклик методу для обчислення гармонік
             DisplayHarmonics();
             CalculateHarmonicSums(firstA0);
+
+            PlotHarmonics();
+
+            SetupChartAxisFormatting();
+            EnableZooming();
+            
         }
 
         private void CalculateHarmonics()
@@ -115,9 +129,136 @@ namespace master_project
             }
         }
 
+        private void PlotHarmonics()
+        {
+            // Очищуємо попередні серії з chart1
+            chart1.Series.Clear();
+
+            // Перевіряємо, чи кількість значень у tDots відповідає кількості рядків у harmonics
+            if (tDots.Length != harmonics.Length)
+            {
+                MessageBox.Show("Кількість значень у tDots не відповідає кількості рядків у harmonics!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Графік для сигналу
+            Series signalSeries = new Series("Сигнал")
+            {
+                ChartType = SeriesChartType.Line, // Встановлюємо тип графіка
+                BorderWidth = 2                   // Встановлюємо товщину лінії
+            };
+
+            // Додаємо точки для графіка сигналу
+            for (int i = 0; i < tDots.Length; i++)
+            {
+                // Конвертуємо tDots[i] у double
+                double xValue = double.Parse(tDots[i]);
+
+                // Отримуємо значення y з масиву AveragesSum
+                double yValue = AveragesSum[i];
+
+                // Додаємо точку на графік
+                signalSeries.Points.AddXY(xValue, yValue);
+            }
+
+            // Додаємо графік сигналу до chart1
+            chart1.Series.Add(signalSeries);
+
+            // Проходимося по кожному стовпчику масиву harmonics (кожна гармоніка)
+            for (int colIndex = 0; colIndex < harmonics[0].Length; colIndex++)
+            {
+                // Створюємо назву графіка (0+1, 0+1+2, ...)
+                string seriesName = "0";
+                for (int k = 1; k <= colIndex + 1; k++)
+                {
+                    seriesName += $"+{k}";
+                }
+
+                // Створюємо нову серію для кожного графіка
+                Series series = new Series(seriesName)
+                {
+                    ChartType = SeriesChartType.Line, // Встановлюємо тип графіка
+                    BorderWidth = 2                   // Встановлюємо товщину лінії
+                };
+
+                // Додаємо точки для цієї серії
+                for (int rowIndex = 0; rowIndex < tDots.Length; rowIndex++)
+                {
+                    // Конвертуємо tDots[rowIndex] у double
+                    double xValue = double.Parse(tDots[rowIndex]);
+
+                    // Отримуємо значення y з масиву harmonics
+                    double yValue = harmonics[rowIndex][colIndex];
+
+                    // Додаємо точку на графік
+                    series.Points.AddXY(xValue, yValue);
+                }
+
+                // Додаємо серію до chart1
+                chart1.Series.Add(series);
+            }
+        }
+
+        private void EnableZooming()
+        {
+            // Увімкнення масштабування на осі X
+            chart1.ChartAreas[0].AxisX.ScaleView.Zoomable = true;
+
+            // Увімкнення масштабування на осі Y
+            chart1.ChartAreas[0].AxisY.ScaleView.Zoomable = true;
+
+            // Налаштування кнопки миші для зуму (наприклад, колесо миші)
+            chart1.MouseWheel += Chart1_MouseWheel;
+        }
+
+        private void SetupChartAxisFormatting()
+        {
+            var chartArea = chart1.ChartAreas[0];
+
+            // Встановлюємо формат чисел на осях
+            chartArea.AxisX.LabelStyle.Format = "F1"; // 1 знак після коми
+            chartArea.AxisY.LabelStyle.Format = "F1"; // 1 знак після коми
+        }
+
+        private void Chart1_MouseWheel(object sender, MouseEventArgs e)
+        {
+            var chart = (Chart)sender;
+            var chartArea = chart.ChartAreas[0];
+            double zoomFactor = 0.1; // Крок масштабування (10%)
+
+            if (e.Delta < 0) // Прокрутка вниз
+            {
+                chartArea.AxisX.ScaleView.ZoomReset(); // Скидання масштабу по осі X
+                chartArea.AxisY.ScaleView.ZoomReset(); // Скидання масштабу по осі Y
+            }
+            else if (e.Delta > 0) // Прокрутка вгору
+            {
+                try
+                {
+                    // Поточні межі вікна масштабування
+                    double xMin = chartArea.AxisX.ScaleView.ViewMinimum;
+                    double xMax = chartArea.AxisX.ScaleView.ViewMaximum;
+                    double yMin = chartArea.AxisY.ScaleView.ViewMinimum;
+                    double yMax = chartArea.AxisY.ScaleView.ViewMaximum;
+
+                    // Розрахунок нових меж масштабування
+                    double xZoom = (xMax - xMin) * zoomFactor;
+                    double yZoom = (yMax - yMin) * zoomFactor;
+
+                    // Нові межі масштабування
+                    chartArea.AxisX.ScaleView.Zoom(xMin + xZoom, xMax - xZoom);
+                    chartArea.AxisY.ScaleView.Zoom(yMin + yZoom, yMax - yZoom);
+                }
+                catch
+                {
+                    // Ігнорування помилок (наприклад, коли масштабування виходить за межі допустимих значень)
+                }
+            }
+        }
+
         private void результатиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form6 form6 = new Form6(yDots, harmonicSums, fourierFormula);
+            Form6 form6 = new Form6(yDots, harmonicSums, fourierFormula, DXDots, DYDots);
             form6.Show();
         }
     }

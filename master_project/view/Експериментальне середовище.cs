@@ -77,6 +77,14 @@ namespace master_project
             textBox2.Enabled = false;
             textBox3.Enabled = false;
             textBox4.Enabled = false;
+
+            //
+            //
+            label9.Visible = false;
+            textBox4.Visible = false;
+            button5.Visible = false;
+            //
+            //
         }
 
         private void button3_Click(object sender, EventArgs e)

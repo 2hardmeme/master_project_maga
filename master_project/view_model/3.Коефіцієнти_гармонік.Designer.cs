@@ -70,7 +70,7 @@
             this.обрахунокАмплітудToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1403, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1403, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -79,13 +79,13 @@
             this.довідкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.щоРобитиToolStripMenuItem});
             this.довідкаToolStripMenuItem.Name = "довідкаToolStripMenuItem";
-            this.довідкаToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
+            this.довідкаToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.довідкаToolStripMenuItem.Text = "Довідка";
             // 
             // щоРобитиToolStripMenuItem
             // 
             this.щоРобитиToolStripMenuItem.Name = "щоРобитиToolStripMenuItem";
-            this.щоРобитиToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
+            this.щоРобитиToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.щоРобитиToolStripMenuItem.Text = "Що робити?";
             this.щоРобитиToolStripMenuItem.Click += new System.EventHandler(this.щоРобитиToolStripMenuItem_Click);
             // 
@@ -96,7 +96,7 @@
             this.обрахунокАмплітудToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.обрахунокАмплітудToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.обрахунокАмплітудToolStripMenuItem.Name = "обрахунокАмплітудToolStripMenuItem";
-            this.обрахунокАмплітудToolStripMenuItem.Size = new System.Drawing.Size(171, 24);
+            this.обрахунокАмплітудToolStripMenuItem.Size = new System.Drawing.Size(134, 20);
             this.обрахунокАмплітудToolStripMenuItem.Text = "Обрахунок амплітуд";
             this.обрахунокАмплітудToolStripMenuItem.Click += new System.EventHandler(this.обрахунокАмплітудToolStripMenuItem_Click);
             // 
@@ -118,7 +118,7 @@
             this.label2.Location = new System.Drawing.Point(77, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(155, 24);
+            this.label2.Size = new System.Drawing.Size(116, 19);
             this.label2.TabIndex = 3;
             this.label2.Text = "X = W * ( T - 1 )";
             // 
@@ -151,7 +151,7 @@
             this.label1.Location = new System.Drawing.Point(422, 1);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(219, 24);
+            this.label1.Size = new System.Drawing.Size(180, 19);
             this.label1.TabIndex = 3;
             this.label1.Text = "Коефіцієнти гармонік";
             // 
@@ -207,7 +207,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form3";
-            this.Text = "Form3";
+            this.Text = "Коефіцієнти гармонік";
             this.Load += new System.EventHandler(this.Form3_Load);
             this.Shown += new System.EventHandler(this.Form3_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

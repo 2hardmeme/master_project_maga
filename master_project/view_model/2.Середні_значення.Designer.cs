@@ -77,7 +77,7 @@
             this.обрахунокКоефіцієнтівГармонікToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1289, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1289, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -86,13 +86,13 @@
             this.довідкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.щоРобитиToolStripMenuItem});
             this.довідкаToolStripMenuItem.Name = "довідкаToolStripMenuItem";
-            this.довідкаToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
+            this.довідкаToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.довідкаToolStripMenuItem.Text = "Довідка";
             // 
             // щоРобитиToolStripMenuItem
             // 
             this.щоРобитиToolStripMenuItem.Name = "щоРобитиToolStripMenuItem";
-            this.щоРобитиToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
+            this.щоРобитиToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.щоРобитиToolStripMenuItem.Text = "Що робити?";
             this.щоРобитиToolStripMenuItem.Click += new System.EventHandler(this.щоРобитиToolStripMenuItem_Click);
             // 
@@ -103,7 +103,7 @@
             this.обрахунокКоефіцієнтівГармонікToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.обрахунокКоефіцієнтівГармонікToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.обрахунокКоефіцієнтівГармонікToolStripMenuItem.Name = "обрахунокКоефіцієнтівГармонікToolStripMenuItem";
-            this.обрахунокКоефіцієнтівГармонікToolStripMenuItem.Size = new System.Drawing.Size(266, 24);
+            this.обрахунокКоефіцієнтівГармонікToolStripMenuItem.Size = new System.Drawing.Size(211, 20);
             this.обрахунокКоефіцієнтівГармонікToolStripMenuItem.Text = "Обрахунок коефіцієнтів гармонік";
             this.обрахунокКоефіцієнтівГармонікToolStripMenuItem.Click += new System.EventHandler(this.обрахунокКоефіцієнтівГармонікToolStripMenuItem_Click);
             // 
@@ -125,7 +125,7 @@
             this.label2.Location = new System.Drawing.Point(87, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(193, 24);
+            this.label2.Size = new System.Drawing.Size(157, 19);
             this.label2.TabIndex = 3;
             this.label2.Text = "Середні значення:";
             // 
@@ -166,7 +166,7 @@
             this.label1.Location = new System.Drawing.Point(238, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(395, 24);
+            this.label1.Size = new System.Drawing.Size(320, 19);
             this.label1.TabIndex = 3;
             this.label1.Text = "Середні значення періодичної функції:";
             // 
@@ -187,7 +187,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.Text = "Середні значення";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.Shown += new System.EventHandler(this.Form2_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

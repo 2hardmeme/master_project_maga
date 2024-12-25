@@ -16,6 +16,8 @@ namespace master_project
         
         private double[] AveragesSum;
         private double periodDouble;
+        private double[] DYDots;
+        private double[] DXDots;
 
         private double[] xValues;
         private double omega; // Оголошуємо поле omega
@@ -29,13 +31,16 @@ namespace master_project
         private double[,] columnSums; // Багатовимірний масив для збереження сум елементів стовпчиків harmonicCoefficients
         private double xValuesSum; // Змінна для збереження суми елементів масиву xValues
 
-        public Form3(string[] tDots, double[] AveragesSum, double periodDouble, string[] yDots)
+        public Form3(string[] tDots, double[] AveragesSum, double periodDouble, string[] yDots, double[] DYDots, double[] DXDots)
         {
             InitializeComponent();
             this.tDots = tDots;
             this.AveragesSum = AveragesSum;
             this.periodDouble = periodDouble;
             this.yDots = yDots;
+
+            this.DYDots = DYDots;
+            this.DXDots = DXDots;
 
             // Підрахунок значення omega
             omega = (2 * Math.PI) / periodDouble;
@@ -212,7 +217,7 @@ namespace master_project
 
         private void обрахунокАмплітудToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form4 form4 = new Form4(omega, m, periodDouble, columnSums, xValues, a0, tDots, yDots);
+            Form4 form4 = new Form4(omega, m, periodDouble, columnSums, xValues, a0, tDots, yDots, AveragesSum, DXDots, DYDots);
             form4.Show();
         }
 

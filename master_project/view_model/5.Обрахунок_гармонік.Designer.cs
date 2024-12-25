@@ -63,14 +63,14 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(910, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(910, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // довідкаToolStripMenuItem
             // 
             this.довідкаToolStripMenuItem.Name = "довідкаToolStripMenuItem";
-            this.довідкаToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
+            this.довідкаToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.довідкаToolStripMenuItem.Text = "Довідка";
             // 
             // результатиToolStripMenuItem
@@ -79,7 +79,7 @@
             this.результатиToolStripMenuItem.BackColor = System.Drawing.Color.IndianRed;
             this.результатиToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.результатиToolStripMenuItem.Name = "результатиToolStripMenuItem";
-            this.результатиToolStripMenuItem.Size = new System.Drawing.Size(98, 24);
+            this.результатиToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
             this.результатиToolStripMenuItem.Text = "Результати";
             this.результатиToolStripMenuItem.Click += new System.EventHandler(this.результатиToolStripMenuItem_Click);
             // 
@@ -103,10 +103,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(228, 42);
+            this.label4.Location = new System.Drawing.Point(306, 42);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(635, 24);
+            this.label4.Size = new System.Drawing.Size(513, 19);
             this.label4.TabIndex = 10;
             this.label4.Text = "Порівняльний графік середніх значень функції та сум гармонік";
             // 
@@ -126,7 +126,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form5";
-            this.Text = "Form5";
+            this.Text = "Гармоніки";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

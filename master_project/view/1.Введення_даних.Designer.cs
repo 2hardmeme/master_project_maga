@@ -108,30 +108,31 @@
             this.згенеруватиФункціюToolStripMenuItem.Name = "згенеруватиФункціюToolStripMenuItem";
             this.згенеруватиФункціюToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
             this.згенеруватиФункціюToolStripMenuItem.Text = "Згенерувати функцію";
+            this.згенеруватиФункціюToolStripMenuItem.Visible = false;
             // 
             // testToolStripMenuItem
             // 
             this.testToolStripMenuItem.Name = "testToolStripMenuItem";
-            this.testToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.testToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.testToolStripMenuItem.Text = "test";
             this.testToolStripMenuItem.Click += new System.EventHandler(this.testToolStripMenuItem_Click);
             // 
             // меандрToolStripMenuItem
             // 
             this.меандрToolStripMenuItem.Name = "меандрToolStripMenuItem";
-            this.меандрToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.меандрToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.меандрToolStripMenuItem.Text = "Меандр";
             // 
             // пилкоподібнаToolStripMenuItem
             // 
             this.пилкоподібнаToolStripMenuItem.Name = "пилкоподібнаToolStripMenuItem";
-            this.пилкоподібнаToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.пилкоподібнаToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.пилкоподібнаToolStripMenuItem.Text = "Пилкоподібна";
             // 
             // гармонічнаToolStripMenuItem
             // 
             this.гармонічнаToolStripMenuItem.Name = "гармонічнаToolStripMenuItem";
-            this.гармонічнаToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.гармонічнаToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.гармонічнаToolStripMenuItem.Text = "Гармонічна";
             // 
             // відкритиExcelФайлToolStripMenuItem

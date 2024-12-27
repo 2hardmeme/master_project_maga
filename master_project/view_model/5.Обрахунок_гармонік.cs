@@ -164,15 +164,10 @@ namespace master_project
             // Додаємо графік сигналу до chart1
             chart1.Series.Add(signalSeries);
 
-            // Проходимося по кожному стовпчику масиву harmonics (кожна гармоніка)
             for (int colIndex = 0; colIndex < harmonics[0].Length; colIndex++)
             {
-                // Створюємо назву графіка (0+1, 0+1+2, ...)
-                string seriesName = "0";
-                for (int k = 1; k <= colIndex + 1; k++)
-                {
-                    seriesName += $"+{k}";
-                }
+                // Формуємо назву графіка у форматі "1+n", де n - останнє число
+                string seriesName = $"1+{colIndex + 1}";
 
                 // Створюємо нову серію для кожного графіка
                 Series series = new Series(seriesName)
